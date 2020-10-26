@@ -1,7 +1,0 @@
-添加新的Effect
-1. .fsh部分 在Resources文件夹中实现.fsh shader函数文件
-2. 程序部分
-在Effects筛选器中创建新类 ME_XXX 继承自 M_EffectSprite
-实现init 函数中对.fsh文件的查找，实现设置蚕食的虚函数。
-3.在Ref_Effect.h 中注册新类的.h头文件
-4.在 数据库格式-Effect.txt 中记录新类

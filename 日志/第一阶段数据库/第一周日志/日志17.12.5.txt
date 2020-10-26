@@ -1,2 +1,0 @@
-研究了CC的模板，将Dialog和Emoji类尝试继承并修改自Sprite
-画了LaEmoji的UML图，在ProcessOn上
