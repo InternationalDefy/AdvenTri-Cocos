@@ -1,0 +1,14 @@
+应当先实现Controller类
+
+当前目标是完成其数据读取，使用和LaEmoji类似的解决方案，用双Vector存取数据
+1.不同之处：此次使用了ItemStringData类来记录不同的Item，以实现不同Controller的变NumberOfItem读取
+2.思考点：是否要通过DataBase类的继承实现代码复用？
+当前阶段否决。原因：目前的数据系统运行良好；不确定是否需要额外拓展，如果需要额外的拓展添加继承会很麻烦；系统的总数并不多；数据核心都为单例没有集中处理的意义。
+3.无论是LaEmoji还是即将实现的Controller，都是以数字在Csv中设计的。此法
++方便程序取用和内存管理+不容易写错 -人类写起来不容易
+解决方案为Reference文件必须保留，以备用人类编辑时使用。
+
+！额外地考虑，是否可以使用Map<String*,ItemStringData>存储数据，Vector<String*>存储引用
+-会更慢 +更方便人类编辑 ?尚不清楚实现难度和解决方案稳定性
+
+尝试建立Controller数据的存取系统，但是目前ControllerStringData的存取仍有问题，应该在Handle和Parse中

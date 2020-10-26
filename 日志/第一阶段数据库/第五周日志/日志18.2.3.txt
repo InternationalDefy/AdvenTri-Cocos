@@ -1,0 +1,24 @@
+今天着手于Player类的构建和操作系统的实现，先在ProcessOn上设计
+
+修复eskill类的访问形式
+*****************
+以上为2日日志
+*****************
+今天先依据ProcessOn上的设计构建Player类
+
+M_pCtrl类由SD_pCtrl构建 SD_pCtrl继承自SD_item
+
+设计思路 由于PCtrl是可以通过升级改变属性的，所以，每个等级的PCTRL应该在一个table中存现，故需要DB_pctrl
+
+另DB_pctrl的设计：
+移动速度 转角速度？（直接转过去？） ！table中需要设计因为这样可以在数据调整时方便，射击速度？！No当作一种技能在skill中实现
+
+Controller类除player之外的实现方法均是用Controler类创建，但是这个Controller类应该时逻辑单元而非数据单元，所以此处，M_pCtrl改用SD创建
+
+另：ControllerSystem系统进行改动，将通常Controller类与PlayerController类分离，因为Controller类中有行为而PlayerController仅仅是数据
+
+经过测试，M_pCtrl类的数据类和构造方法已经完成，其运行方法牵扯到事件监听，
+
+考虑：controller类和listener类的关系
+两者都需要监视复杂的事件信息，都需要注册listener
+controller和listener都可以注册listenerKey或者ListenerMouse，但是所用目的不同，处理问题元不同！

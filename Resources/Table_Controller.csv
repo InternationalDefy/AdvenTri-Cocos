@@ -1,0 +1,16 @@
+3,//总行数 Controller的数据格式统一读取，但是处理方法由各类Controler派生类自行使用
+Line1:	Name,Type,Delay(并非所有Ctrl都使用),
+Line2+:	str1,str2,...strm,endln(注意使用结尾符endln),
+LineX:	ensd,(表示SD的结束)
+1,Simple,3.0,endln,
+DashBy,720,0,endln,
+MoveTo,10.0,666,666,endln,
+ensd,
+2,Simple,3.0,endln,
+Wait,1.0,endln,
+MoveTo,1.0,0,0,endln,
+MoveTo,1.0,1280,0,endln,
+ensd,
+3,MenuRandom,3,endln,
+1.2,1.0,100.0,endln,
+ensd,

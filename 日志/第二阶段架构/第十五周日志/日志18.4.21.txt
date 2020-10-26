@@ -1,0 +1,198 @@
+1 需要组织一个UI层，一个场景添加两个层，Ui系统作为一个单例而出现，使用getInstance方法来获取一个拥有参数调用的合适的UI层
+2 在Sys_UI中组织一个数据库DB_UI多层级逻辑结构。表示已有UI的实现材质和使用方案，有很多的注释行。而UILayer以及各种初始化图像。参数等的设置在Sys_UI中实现
+3 载入页面也可以通过Sys_UI设置其形态，同时作为不同于UILayer的类LoadingScene出现，在MainSceneLoading时使用回调函数创建MainScene，但是。
+效率问题未知，是否能双线加载资源未知。这里需要考虑：先做实验考虑其效率如何，如果不行，则只能手动双线程。
+4？ 使用类似于对象池模式的方法处理场景类和UI层的互动。UI层对场景类是部分可见的，场景类持有UI层的实例指针。场景类对UI层不可见。UI层拥有部分public方法向其添加UI元件，可以被场景类调用。场景类中的元素，包括实体，逻辑实体等需要使用UI的场景元件持有UI系统数据库中的UI Set（实质是StringData）实体类对UI层不可见。场景类在创建实体时利用其UISet数据元 向UI层派发信息，并将其对应的指针传送给UI元件的构造器中作为初始化参数而使用。此过程可能需要由全局可见的Sys_UI来完成。
+4？ 考虑观察者模式已经实现和游戏固有的信息派发机制：可以在场景层派发信息给UI层，在UI层的每一个元件创建并初始化时添加其监听器。如此设计需要考虑一个对话框的完全实现问题：通常情况下的表情表述更多的是在场景层的动作而非UI层沟通的实际UI，而对话发生时则进入对话框状态？这样不好，以为丧失了艺术性实现的可行性和灵活性。那应该如何保持UI层同步？又保证绝大多数UI逻辑在UI层中？
+如果完全使用观察者模式实现，那么只要有UI实现，每个实体的每一步都需要信息的派发。效率堪忧。
+5 很显然我们需要一个能够由脚本控制的类来处理 对话类，也许叫做 M_Speech 而，M_Speech应该是场景层的还是UI层的组件呢？
+
+4 设计决定
+使用观察者模式实现。
+在游戏逻辑上是需要修改UI的操作，完全由UI层完成，其使用事件监听机制，用派发事件和注册监听器的形式实现场景层和UI的双向沟通。
+场景类在完全实现的时候也可以将ListenerSet作为一个类而使用。
+这里要注意维护一个事件信息表。记录不同事件的派发者和接收者以避免误操。
+
+5 设计决定
+普通的言语，类似FuckU之类的出现作为场景类的一部分而存在，属于实体的子节点。
+场景需要一个对话状态，但不一定是对话框状态，而是对话触发状态。当前状态启动UI层的Controller，并且设置Swallow，实体层的Controller依然可以使用但是选取事件会被Swallow。操作实体离开则可以结束对话，以派发事件的形式使UI层DisableController，同时结束对话触发状态。
+对话状态的进入和退出，牵扯到相机视角的变换，这里自然需要UI层持有主角类的指针，用以访问和控制相机控制器。相机控制器的外部接口有用啦！希望我还没删掉它。
+
+*****************
+以上为3日日志
+*****************
+今天要根据已经实现的架构和昨天的既有想法来实现Dialogue类的设计和计划。
+Dialogue类是逻辑很复杂的一个类，在需要实现的功能上，它大致包含以下几个：
+内部逻辑：
+1 
+-一个M_Dialogue有多个页面Page_Dialogue
+	-每个页面展示的选项是UI_Item，展示的语言则是M_LaEmoji
+		-展示的语言在其播放完成之后选项才会出现，选项出现完成之后才可以点选
+			这里的M_LaEmoji不应当单击自动翻页或是删除，而应当在其他类调取其Remove方法是被可控地移除
+			毕竟单击翻页是一个测试功能，应当将其修改？修改方案？待定。
+		-一个页面经由选项可以进入另一个页面，或者触发某种逻辑，或者退出该LaEmoji
+	-M_Dialogue在类中管理Page_Dialogue，是其父节点以及成员变量的所有者。
+		-M_Dialogue持有管理Page的方法，移除Page（结束Dialogue）与切换Page（由Item的EventParser调用）均在M_Dialogue类Public方法中。
+2
+-M_Dialogue由数据库中的数据脚本化定义，由Sys_UI和Handler创建。
+	-SD_Dialogue记录每一个Dialogue需要的数据，DB_Dialogue存储SD_Dialogue的索引
+		-SD_Dialogue存储包括 登场动画 退场动画 使用的页面数目（n）
+		-不使用DB_PageDialogue，将PageDialogue的数据定义在SD_Dialogue中 其包括 该页面的
+		登场动作 退场动作 使用LaEmoji数目 使用LaEmoji的名字 使用的UIItem数目 使用UIItem的名字
+		-形式是SD_PageDialogue，无DB存在
+	-Handler直接使用CaseSwitch语句即可？或者直接使用ActionParser的通用类？
+
+关联逻辑：
+3
+-M_Dialogue作为UI_Layer的子节点以及成员变量
+	-Dialogue只能同时打开一个
+		-由UI_Layer控制Dialogue的打开和关闭
+	-Dialogue打开时游戏的其余逻辑处于暂停状态
+		-通过UI_Layer暂停EntityLayer和PhysicsWorld，UI_Layer继续运行
+外部逻辑：
+4
+-Dialogue可能会触发场景类的事件？可能会需要场景类播放某一动画？
+	-以事件分发的形式实现对场景类的沟通和控制
+	-Dialogue触发EntityLayer动画？
+		先使Dialogue关闭，触发动画后再使Dialogue打开至将要去的Page
+
+依据以上实现功能，进行一些设计决策上的考虑：
+1 M_LaEmoji单击翻页功能的去留？
+删！这还用考虑！？测试用功能现在已无用，加之绝大多数LaEmoji都将在UI层以无案件监听的形式出现。但也有的需要实现短时间移除LaEmoji的存在，可以用Scheduler remove
+2 Sys_UI中DialogueActionHandler使用何种实现方式？直接以ActionHandler重写之，将UIItemUIMenuDiaogue的Enter方法变为一种通用性的外部接口。
+3 Dialogue触发EntityLayer动画？
+处理方案见4.2.1，具体方法含在UILayer中，传递的参数为(FiniteTimeAction*,Entity*,float time)
+
+设计决定：
+M_LaEmoji（修改）
++void enter();(addChild)
++void exit();(removeFromParent)
++void nextPage();
+M_ActionHandler（重组）
+public FiniteTimeAction* getEnterAction(SD_Dialogue*)
+private FiniteTimeAction* enterActionHelper(SD_Dialogue*) 
+{switch (SD_Dialogue->getEnterActionType())}
+UI_Layer（方法拓展）
+private:
+Layer* _entityLayer;(default get when createScene())
+bool _layerActionRunning;(default false)
+bool _layerIsPaused;(default false)
+float _layerActionLimit;(default 0)
+float _layerActionScheduler;(default 0)
+M_Dialogue* _dialogue;(default NULL)
+void setLayerPause(bool);
+public:
+void enterDialogue(M_Dialogue*);
+void exitDialogue();{_dialogue->exit();_dialogue->removeFromParent;_dialogue->retain();_dialogue=NULL;}
+void entityAction(FiniteTimeAction*,Entity*,float duration)
+{_layerActionScheduler=0;_layerActionLimit=duration;_layerActionRunning=true;if (layerIsPaused) layer->resume();(getPausedAgainAfterActionTime);}
+*pause->非直接引用pause方法，而是使用Scheduler，Action，以及PhysicsWorld的分离暂停？或者直接使用pause方法？有待考证！
+void update(float dt);
+{updatePosition(dt);++updateScheduleLimit(dt);etc...}
+void setEntityLayer(Layer* layer);
+
+M_Dialogue
+private:
+Vector<Page_Dialogue*> _page;
+int _pageIndex;(_page.at(_pageIndex) is A child Node)
+FiniteTimeAction* _enterAction
+FiniteTimeAction* _exitAction
+public:
+void enterDialogue();
+void exitDialogue();
+void setNextPage(int);
+void setEnterAction(FiniteTimeAction*);
+void setExitAction(FiniteTimeAction*);
+
+Page_Dialogue
+private:
+FiniteTimeAction* _enterAction
+FiniteTImeAction* _quitAction
+Vector<UI_Item>* _item;(also as Child Node)
+bool _onShow;
+void finishEnterCallback();{itemEnter;}
+void finishExitCallback();{(M_Dialogue*)getParent()->setNext?exit?}
+nextPage可能是任何一个Index，由UIItem的EventParser控制。
+public:
+void pushItem(UI_Item*)
+void pageEnter();{runAction;_onShow=true;ActiveLaEmoji;}
+void pageExit();{runAction;_onShow=false;ExitLaEmoji;}
+DB_Dialogue&&SD_Dialogue
+
+*****************
+以上为17日日志
+*****************
+今天开始构建Dialogue的体系，先从数据库开始。
+SD_Dialogue
+Name NumberOfPages OffsetX OffsetY
+EnterActionType Params
+ExitActionType Params
+1->NumberOfPages:
+BGName CharIconName LaEmojiName Opacity NumberOfItems
+EnterActionType Params
+ExitActionType Params
+itemName LaCtrlItem1 offSet
+itemName LaCtrlItem2 offSet
+1->NumberOfItems chooseItemsName offSet
+一些说明
+DiaCtrlItem是在说话或说话结束后进行选择使用的Item，LaCtrlItem则是控制LaEmoji前后翻页的Item
+LaEmoji应该添加外部页面控制方法。已经添加了。。。还应该有一个由外部控制的标识？对，在展开结束之后，LaEmoji应该给其所属的Dialogue发送消息。
+M_LaEmoji添加（在M_Dialogue实现的过程之中）
+M_Dialogue* _parentDialogue(default NULL)
+void activeEndCallDialogue();
+极其复杂的数据库编写完成，正在编译。。。
+正确的实现了数据库，还需要实现M_Dialogue类和Page_Dialogue类的创建，方法定义，和ItemLaEmoji的拓展才能够测试。
+实现了两类的Setter&&Getter函数，现在我们可以尝试用Sys_UI建立其了？Nope，还需要拓展Item和EventParser，但是创建方法可以使用了。有那个必要吗？没有！继续完善其逻辑操作，之后再拓展Item和EventParser，然后再测试？这样是不是战线拖得有点长了？是！所以还是先做没必要的事吧，在没有Item和EventParser的拓展之下？No!!!先拓展，必须的！罗里吧嗦了一堆以后，为了避免有凑日志字数的嫌疑，我把回车删了
+创建中发现问题，CharIcon需要一个OffSetVec2
+先进行目前任务，完成后再考虑CharIcon
+这里记录一个设计，Item和Menu的关系一样，如同Item和PageDialogue的关系，在添加时就进行AddChild，只有Enter操作被调用时才会出场，
+而对于Dialogue，只有Enter被调用的时候，才将Page AddChild，并设置为CurrentPage
+还有Item的Opacity属性要添加，还有Opacity应该时Dialogue的属性，非Page
+设置完成生成方式，明天加以拓展属性来测试/。
+
+*****************
+以上为19日日志
+*****************
+昨天做了些作业没有编程，实在是不应该，今天先致力于Item和EventParser的方法拓展，以及动画拓展。
+突然发现一个十分高效的csv编辑方法，类似于深度优先搜索的树结构，将上下屏幕当作栈使用。
+编辑过程中遇到程序或者素材没有实现的就开着csv留着编辑完以后拓展。
+现在需要实现的程序部分：
+//Action* ActionHandler::FadeOut,
+//Action* ActionHandler::MoveTo,
+//Action* ActionHandler::MoveBy,
+class DiaCtrl_End :public CallbackParser
+class LaCtrl_Left :public CallbackParser
+class LaCtrl_Right :public CallbackParser
+拓展DiaCtrl_End时出现疑问？EventCustom都一样的么？只有使用了getName才能够被识别？
+加入getName判断，虽然这不是最高效的，但是目前测试阶段最可靠的。
+测试DiaCtrlEnd类能否正确的转换DiaCtrl
+数据拓展和生产方法已经实现，现在在Laye中添加入场方法。
+尚未实现。
+先忽视更加复杂的LayerAction部分。目标实现UILayer和Dialogue的沟通即可。
+修改设计方案！ 1：Dialogue添加GetState（）方法 2：Dialogue设置OnSetLocalZOrder。
+2:在DB里拓展LocalZOrder是一件极其麻烦且易错的事，暂时先搁置。
+1:仿照UI_Menu来设置M_Dialogue的出入控制量。
+初步实现，不知道编译结果和实验效果如何。
+又一次出现了Invalidtype的问题，记录这几个出现问题类的名字：
+DB_UI_Menu.cpp Ref_DataBase.h Ref2UIMenu.h Ref_UIItem.h Ref_Controller.h M_UI_Layer.h
+SD_UI_Menu.cpp Ref_DataBase.h  Ref2UIMenu.h
+M_UI_Menu.cpp
+M_UI_Layer.cpp
+DB_Dialogue.cpp Ref_DataBase.h 
+SD_Dialogue.cpp Ref_DataBase.h
+M_Dialogue.cpp
+Page_Dialogue.cpp
+Sys_UI.cpp
+HelloWorld.cpp
+在上图中记录他们包含的头文件
+排除干扰项。Menu部分，和DB均可排除。
+错误很低级，在一个类里把同一种方法声明了两边。
+修正了所有该修正的低级错误，但是，包括：
+1.同一个类里同一种方法隔了一段代码声明了两边
+2.把判断语句写成了赋值+判断
+3.Ref引用不完全
+4.忘记retain而是空间被重分配
+当前的问题：dialogue的位置没有被正确设置。
+Dialogue 640 300 Page 0,0 LaEmoji 640 150
+实际上正确的。Dialogue不应该有Pos Page Pos设置的是其点 LaEmoji实际上是Offset
+ok，终于实现了，呼~~~

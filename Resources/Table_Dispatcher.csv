@@ -1,0 +1,8 @@
+6,//
+name,sentEventName,CoolDownTime,LimitTimes,listeningFuncType,L_FuncNumberOfParams,Param(s),
+Test_UI_MouseAt_DiaCtrl,Test_MouseOnDiaCtrl,0,1,LeftClickOnUIItem,1,this,
+Test_UI_MouseAt_LaCtrlLeft,Test_MouseOnLaCtrlLeft,0.5,-1,LeftClickOnUIItem,1,this,
+Test_UI_MouseAt_LaCtrlRight,Test_MouseOnLaCtrlRight,0.5,-1,LeftClickOnUIItem,1,this,
+Test_Dispatcher1,Test_Event1,0.5,10,PositionWithin,4,1280,360,200,200,
+Test_Dispatcher2,Test_Event2,0,999,PositionWithin,4,0,360,200,200,
+Test_UI_MouseAt_1,Test_MouseOnUI_1,1,-1,LeftClickOnUIItem,1,this,

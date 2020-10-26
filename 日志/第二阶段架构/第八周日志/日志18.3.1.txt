@@ -1,0 +1,35 @@
+今天的目标是实现一个物理函数回调机制，它将访问到Entity类和Animation，也许还要考虑与ListenerSet相关。
+
+对了，ListenerSet类尚未完成。
+
+那么今天的任务有2，考虑以下合理的先后顺序，先以完成EventPhysics类和其回调体系为首，然后完成ListenerSet类。
+
+EventPhysics体系需要类：
+1 分拣类 M_EventHandlerPhysics
+该类中包含Listener直接使用的回调函数
+该类中包含可以被Sys直接添加至Layer的方法
+2 基类 M_EventParserPhysics
+该类包含对某一事件处理的通用方法 （虚函数）
+该类可以由Physics事件访问Entity
+3 派生类 EPP_
+对某一类事件的处理
+4 引用集 Ref_EventPhysics
+
+上述类的实现顺序应当是 4 2 1 3
+2->3 添加扩展方法
+
+以上几个类均已实现
+在实现过程中注意的几个问题：
+1：Shape的设置方法比较复杂，搞清楚了但是仍需多加留意在.csv中的记录
+2：EPP的派生类应当拥有自己的CREATE_FUNC不然会完全创建出父类以至于使用父类方法
+3：在文件中记录拓展方法
+
+*****************
+以上为28日日志
+*****************
+
+昨天忘记了ListenerSet的任务而去战地4了，Stupid。今天要先完成ListenerSet的搭建。
+
+考虑到其与Entity有关，可能需要先看看Ebreed和Pbreed的设置。
+
+顺利实现了ListenerSet的设置，并且注意CallbackParser应当添加到Node上所以需要两个GetParentNode

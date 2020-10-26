@@ -1,0 +1,7 @@
+Entity预添加Entity* _enemy以实现行为函数，或者多一些static private函数进行调用
+Entiy预使用类型对象模式，那就要添加更多的参数表，明天的Entity数据类型就要多加注意了。
+ControllerSimple仅仅是测试类或者简单类，以后还要加以扩展，但目前而言，其拓展和维护已经实现。
+
+ControllerPlayer应当和拥有PlayerBreed的Entity相互关联，从此处实现主角操作。
+
+当前目标：先实现实体的物理系统！

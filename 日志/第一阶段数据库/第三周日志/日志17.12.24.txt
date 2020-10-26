@@ -1,0 +1,33 @@
+当前目标：先实现实体的物理系统！
+
+Breed和Entity的关系：Breed持有Entity的特化数据，而实体持有共性的操作和方法。Breed和数据中枢沟通，是数据层面的定义，用于建立实体。
+共性的方法如Speak，Physics等由Entity持有方法，Breed持有特化数据
+特性的方法如Skill，Attack等由Entity持有特化方法的引用，Breed持有特化方法（？不清楚不同实体的特化方法特化程度如何）
+现在需要一种折中的同时不失去拓展性的设计。
+
+解决办法：把Attack，Skill等类分为各种继承类，Breed在其数据中持有对应继承类的创建参数，以及种类。
+
+Physicsyi应当是Breed层面的数据，在目前实现时先直接对Entity进行操作。
+
+决定！Breed是一个组合类，包含Physics，Attack，Skill，Speak等数据。
+
+先从作为组件类之一的Physics写起。
+
+实现了Shape的数据读入，预使用shapeData创建Shape（还未画进UML）
+
+*****************
+以上为23日日志
+*****************
+catogeMask contacttestmask collisionmask（按顺序）要在shape的数据类中定义！
+Dynamic也在ShapeData中定义
+楼上傻逼，Dynamic是Body的属性，
+突然意识到这东西不能设置偏移量且Body还有很多重要属性，写法还要改！
+Body的各种属性仍要在PhysicsData.csv中定义！
+
+实现数据中枢，下午应该可以完成实体创建并添加操作。
+
+数据核心可以利用面向过程的StartAnalyse MiddleAnalyse EndOfLineAnalyse简化代码！
+
+现已实现了基础控制器和物理数据与Entity的结合，现在任务是优化程序结构
+
+结构化方法须知：已经实现的数据元无需再使用，未实现的结构元可以在ControllerData中获取原版

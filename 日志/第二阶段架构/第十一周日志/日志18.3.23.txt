@@ -1,0 +1,52 @@
+今天的目的是依据已有的DB和SD和Sys在Sys层面实现创建ItemEntity的操作，M_ItemEntity继承自Entity应当是一种实体的形式出现，需要controller和ListenerSetFunc
+但它更加类似于N_Entity，不具有Entity的Debuff和Damage属性
+考察实体类的基类属性，包括Controller，Physics，Texture。而一个M_ItemEntity需要实现的属性和方法包括：
+Controller* _FlyingController 继承在Entity中
+PhysicsBody* _ItemBody 继承在Node中
+ListenerSet* _listenerSet 需要添加实现
+CallFunc* _flyingEndCallfunc 目前重点
+修改SD和DB和CSV 把敌人DropItem和主角ThrowItem区分开来。使用不同的Controller
+似乎出现了相互包含的问题，编译中出现了无法继承Entity类的情况，先使用重新生成尝试。
+没有什么用，但是把Entity.h包含进ItemEntity.h 解决。但还是要担心以下以后的问题。
+实现了ItemEntity类的添加解析和调用，考虑State和Entity的结合实现Item类，但是需要一个物品栏类将两者结合在一起，
+物品栏类必须要一个UI系统的支持，这已经是刻不容缓的实现了，现在还需要把NPC类和析构器予以完善。
+
+NPC类设计：
+类似于Enemy类但是没有那么丰富的方法。
+-amor -weapon -debuff -skills -state
+~animationPack ~listenerSet ~controller ~uiSet ~physicsBody
++speak +Map<AdvenTriEnum::DamageType,bool> volunableTo
+NPC类需要一个类似于Enemy的Debuff体系？来控制是否消亡？否！直接控制Vulnerable即可。
+
+*****************
+以上为22日日志
+*****************
+今天要依据NPC类得考量来设计其内容，同时进行文件派发。
+Table_NpcBreed.csv SD_nBreed DB_nBreed M_Npc Ref_Npc Ref2Npc
+Table_NpcBreed.csv
+n,
+Name,textureName,LanguagePackName,animationPackName,physicsBodyName,eventListenerName,uiName,controllerName,int numberOfVulnerable,Vulnerables,
+考虑到这些设计，可能需要重新实现LaEmoji系统。
+别可能了，绝对需要重新实现。并加入LaEmojiPack。
+一些核心的方法可以保留，但是程序结构和名字都比较混乱。
+名字的修改和逻辑结构的修改都需要进行。
+首先修改文件名 文件名修改结束
+修改类名 类名修改结束
+修改内部逻辑使 DB SD归于继承类与派生类。
+用DB的形式修改LaEmojiData
+也许需要把DB一改三？先备份所要修改的类
+仿照其他DB的形式创建DB_Emoji DB_Dialog 以DB_ItemState为例
+我（当时）在想什么！？居然把List的属性写到了Dialog的SD里，改，必须改！
+用了另一种方法去相对缓和的处理SDEmoji，和SDDialog，但是考虑到SD只有一行项目即其文件名，其实可以删去其文件名的意义？
+或者考虑另一种设计？使SD_LaEmoji成为一个Item的载体，这样也许会比较难以访问，也需要对生成器的函数做很多修改。
+
+目前维持原判，即双定义SD
+现在修改重灾区 DB_LaEmoji
+animation的定义形式必然需要修改，但是目前不行。
+修改了DB_LaEmoji的形式，修改了继承方法 init 增添了AnalyseEndln的次数，使得现在能且只能添加三行注释语句
+现在问题的重点是GetLine的设计。
+重灾区修改完成，进行一次Debug
+明天再尝试修改创建体系。应该比DB容易得多。
+果然还有问题。Parser似乎出了问题。
+DB_Emoji DB_Dialog的问题，Endln处理不当。
+似乎重灾区反而没有问题。

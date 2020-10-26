@@ -1,0 +1,1856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\00Enum">
+      <UniqueIdentifier>{8cdbc961-0700-4278-a119-2839b67807b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation">
+      <UniqueIdentifier>{2ae1f9d9-65ce-4342-827d-f2f761197e4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller">
+      <UniqueIdentifier>{74348568-9f0c-4a0d-bf3b-f5f2c2bee4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\01Effect">
+      <UniqueIdentifier>{a61edcbd-6a04-4526-bb65-35323dca6a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\00DB Base">
+      <UniqueIdentifier>{7bf8ddb0-fb82-43b0-9c7d-5c9bdb800537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event">
+      <UniqueIdentifier>{e5bf50f5-c8e9-4761-b9c0-229159eb8980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji">
+      <UniqueIdentifier>{568253ef-07a4-49f5-a4d6-e07b6e7810c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics">
+      <UniqueIdentifier>{6686322c-ce93-4964-9719-e2af5708ae67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity">
+      <UniqueIdentifier>{4a3fe4e4-fc16-431d-8825-16cbfa5553d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02NPC">
+      <UniqueIdentifier>{a4b37257-6d05-4f39-92dc-84af3b666874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02NPC\SD">
+      <UniqueIdentifier>{a9001cad-ffee-4a45-a55d-ce6eb4623203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02NPC\DB">
+      <UniqueIdentifier>{6e8ca3e8-282f-41ee-8261-1df7676bcbfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02NPC\M">
+      <UniqueIdentifier>{77f8c91f-4854-49e5-b383-c207cdacf150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item">
+      <UniqueIdentifier>{3827432f-dd8b-4198-b6f7-a002f5545c42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation\01DataBase">
+      <UniqueIdentifier>{e56b6c40-9cfb-48f4-a68d-c882fd783156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI">
+      <UniqueIdentifier>{8c38da45-fd95-427a-86c9-584a53c97212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working">
+      <UniqueIdentifier>{df76b743-181b-4dee-8bc8-e0e2e6fe341f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\Scene">
+      <UniqueIdentifier>{2368666c-518f-4cd2-babe-676882320f3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\GameLayer">
+      <UniqueIdentifier>{4da34d1d-d81f-4679-97a5-919b0f0ec460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\GameLayer\DataBase">
+      <UniqueIdentifier>{7a1ad8e7-78d0-4d71-838d-c2d8cfb8d201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\SplashLayer">
+      <UniqueIdentifier>{a9ba7bcd-d989-4991-b363-4706c350c3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\SplashLayer\DataBase">
+      <UniqueIdentifier>{bc0072f4-3509-4b93-a371-8d8c4b29edab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\SaveData">
+      <UniqueIdentifier>{91c5de86-1444-4d68-8b93-f6a11d41269a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\99Working\Menu">
+      <UniqueIdentifier>{632e721e-5eb8-4d75-b1dd-2d61f1deaee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlBase">
+      <UniqueIdentifier>{a70b8265-b387-4a0e-a9bb-299be9b3fb04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\02StringData">
+      <UniqueIdentifier>{09d24166-552d-4d8c-8baa-d567f51af2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\01System">
+      <UniqueIdentifier>{5aabef39-cd34-4d7a-8ab6-f95cb941c6ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\02DataBase">
+      <UniqueIdentifier>{ee65db54-f1ef-4b99-898a-75921473d661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\02DataBase\01CtrlPlayer">
+      <UniqueIdentifier>{30c56f3a-cc2a-4859-87aa-f6d29b9d0964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\02DataBase\00Ctrl">
+      <UniqueIdentifier>{b4d25f23-f715-4a3a-8347-895f72a206a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon">
+      <UniqueIdentifier>{eb6e6768-de58-43b1-8ea6-3ceee9264778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCamera">
+      <UniqueIdentifier>{f703653b-686b-4db9-976f-2d9cccf26935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\04CtrlPlayer">
+      <UniqueIdentifier>{9030c599-036e-47e6-91c2-fa1e549c1e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation\01StringData">
+      <UniqueIdentifier>{d0ccbe0d-b1fb-4919-86eb-7304bbbee420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation\02ActionParser">
+      <UniqueIdentifier>{9c997259-68c2-4b59-8b3b-d8e1f23ed283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation\02AnimaitonPack">
+      <UniqueIdentifier>{a2ef7043-24a1-4185-962b-a642b5db1703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\00DB Base\01DB Base">
+      <UniqueIdentifier>{4987e5e4-6d99-44a1-ad2a-8390f1e061ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\01Effect\02Effects">
+      <UniqueIdentifier>{a91fe078-5349-4fcd-a60c-634277a2d493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\01Effect\01EffectSprite">
+      <UniqueIdentifier>{54525690-d371-4939-affc-b307aebf9748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\01Effect\02Base">
+      <UniqueIdentifier>{fe56dcac-848a-40a0-ab99-a60bbb9a780d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\01Base">
+      <UniqueIdentifier>{60e091ea-22b9-47cf-a28d-8337d22ab501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\01Base\00Shadow">
+      <UniqueIdentifier>{fbf901db-6ed5-4c99-b79f-526d886a3d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\01Base\01Entity">
+      <UniqueIdentifier>{ccb44237-7160-444f-a844-5a7e817e0a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Player">
+      <UniqueIdentifier>{c85a8ac6-5e91-48c1-9374-9d3965651389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Player\Skill">
+      <UniqueIdentifier>{5b2102a8-0ad8-45ff-9531-4ab02f5b62a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Player\Models">
+      <UniqueIdentifier>{e0d8d2a3-bdbd-43db-9e4a-847881318739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Player\State">
+      <UniqueIdentifier>{8dfbce8e-73c3-4411-8717-9c1a0386baa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy">
+      <UniqueIdentifier>{44fadf59-6b01-4f57-9a9e-675b676403c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\03Breed">
+      <UniqueIdentifier>{dd5f8d04-eb11-4464-95b9-271ad45eb9af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\03Breed\StringData">
+      <UniqueIdentifier>{53960cdf-d827-4303-950c-22c377311ba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\03Breed\DataBase">
+      <UniqueIdentifier>{cc14cbdf-cbe0-48fd-83f0-f179c218574b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\05Skill">
+      <UniqueIdentifier>{3625e053-7e03-40c3-8af2-745d85b92325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\05Skill\00EskillBase">
+      <UniqueIdentifier>{7557e2b6-f89f-4f2a-8521-306d4f03920e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\05Skill\01EDash">
+      <UniqueIdentifier>{276b8c81-9f64-40b9-a78c-4649652faf0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\05Skill\01EShot">
+      <UniqueIdentifier>{44cc142f-6b00-49f2-9064-bb2f5abc7ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\04State">
+      <UniqueIdentifier>{145f2a28-d1d0-49d7-b785-386b735918de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\04State\00EStateBase">
+      <UniqueIdentifier>{4241055b-aa3d-4dbe-8e6c-cc916a42d81e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\04State\02EStateDash">
+      <UniqueIdentifier>{5a58995e-55cc-4ccf-9055-833103e9a9d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\04State\01EStateStandred">
+      <UniqueIdentifier>{0144e058-865e-46b8-af15-2a75c4d0295e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\01Amor">
+      <UniqueIdentifier>{fd3c398e-4bf7-460b-91f9-959c066ba1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\02Weapon">
+      <UniqueIdentifier>{ba9b77fe-ec76-4f52-8d3f-f6482a690bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\02Enemy\06Model">
+      <UniqueIdentifier>{bafb2a21-5a80-40b3-a4f7-f8cfd9d66b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\01Event">
+      <UniqueIdentifier>{012ba265-77f1-446c-98bd-e3d34cfd7c86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback">
+      <UniqueIdentifier>{0f0e8416-f343-4a68-b6dc-bfc66604dfcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher">
+      <UniqueIdentifier>{82728ebe-4718-4e3a-8e04-74abca9198b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\03ListenerSet">
+      <UniqueIdentifier>{9083c4f8-9d45-49fc-80bc-ef5b38fc6961}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\04PhysicsEvent">
+      <UniqueIdentifier>{d8209145-e7c2-4f63-aa21-49fe662b6f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\05System">
+      <UniqueIdentifier>{b44d9844-1407-495d-a9c2-74e9ba4fe2bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\00DataBase">
+      <UniqueIdentifier>{7f4d6af9-c55c-486b-9483-81e360774c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\00StringData">
+      <UniqueIdentifier>{6b60f187-4aaa-4e2c-80f3-4948a0760b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\01Model">
+      <UniqueIdentifier>{98bdf15c-87e1-4af4-80d5-0b3ce070106f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\01Model\Handler">
+      <UniqueIdentifier>{cde20546-e100-4314-b1d3-c2670ed06e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\01Model\Parser">
+      <UniqueIdentifier>{8be37e4f-d613-46e0-be5e-01824eac9017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Dispatcher\01Model\Parser\ParserBase">
+      <UniqueIdentifier>{116bf3f2-f739-483f-a9f4-4d81961fdfcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\00DataBase">
+      <UniqueIdentifier>{0acb1b20-9c10-43a6-a1ff-816861a9dffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\01Model">
+      <UniqueIdentifier>{6fca6e5f-df4d-4ffa-8c77-f26b0e593160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\01Model\Handler">
+      <UniqueIdentifier>{71f1d18d-71dc-44b9-8752-55a68aff2e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\01Model\Parser">
+      <UniqueIdentifier>{a90c6b8a-1deb-4592-83e0-ad884fd62a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\01Model\Parser\ParserBase">
+      <UniqueIdentifier>{7a9eb8ac-151d-44ff-a84f-69f5e9f0f014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\01Model\Parser\DialogueCtrl">
+      <UniqueIdentifier>{fc9280f3-dbf1-44fd-9c58-5c0a95fe9f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\02Callback\00StringData">
+      <UniqueIdentifier>{5233d48c-f1cf-46d6-ab09-55cf30dec8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\01Event\00DataBase">
+      <UniqueIdentifier>{fb9855ec-60b6-4943-b95f-ac2964c98928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\01Event\01Model">
+      <UniqueIdentifier>{900f0609-0f79-4353-813f-3a43f17ea024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\01Event\00StringData">
+      <UniqueIdentifier>{c6fe7bd6-2b64-42f6-9804-1d0b5fb57d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\03ListenerSet\00DataBase">
+      <UniqueIdentifier>{5a3983d9-8e44-4246-b30c-2297e04ad611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\03ListenerSet\00StringData">
+      <UniqueIdentifier>{e571377b-dc52-4bd2-8e61-222244e50b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\04PhysicsEvent\00Model">
+      <UniqueIdentifier>{e7ed7faa-6917-40ff-928c-48cd663727e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\04PhysicsEvent\00Model\Handler">
+      <UniqueIdentifier>{14072e58-ae6a-4623-bd66-7340f6ddc560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\04PhysicsEvent\00Model\Parser">
+      <UniqueIdentifier>{1659b09f-4c03-40da-ac82-187692337b1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\04PhysicsEvent\00Model\Parser\ParserBase">
+      <UniqueIdentifier>{f32a12e1-672e-4fdd-91c3-b3ffe238a74b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref">
+      <UniqueIdentifier>{ca0a476b-5886-4a64-b413-ac57f3265a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref\Callback">
+      <UniqueIdentifier>{50fd2d92-a002-4086-917f-780a3940be54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref\Dispatcher">
+      <UniqueIdentifier>{b508c803-eb2c-4e57-b4a1-d20f88fac151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref\ListenerSet">
+      <UniqueIdentifier>{ea49f8f4-04cc-4c31-af67-d0fdf668caea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref\EventSingle">
+      <UniqueIdentifier>{189cddd0-bb4f-4233-8a73-c53ea49839ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\04Event\00Ref\PhysicsParser">
+      <UniqueIdentifier>{dbe3e868-fe32-4617-81cb-00918e004523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity">
+      <UniqueIdentifier>{2aa9a53c-925d-4b82-99f3-d30626562a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState">
+      <UniqueIdentifier>{c1d3ef46-dfc0-48a9-b256-6e20e45fcf90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\02System">
+      <UniqueIdentifier>{3fc85e8d-8309-4b29-b8b2-22645a0d33a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\00DataBase">
+      <UniqueIdentifier>{0b3d248f-a59d-4bf8-b9a3-c426ab2d27b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\00StringData">
+      <UniqueIdentifier>{dc8470ca-b2ba-4d99-9e6a-2573f9da22b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\01FlyEndFunc">
+      <UniqueIdentifier>{c8809911-f970-4412-9f1b-675ecd8a0bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\01FlyEndFunc\Parser">
+      <UniqueIdentifier>{50731103-3246-43aa-b6c8-ce961467b150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\01FlyEndFunc\Handler">
+      <UniqueIdentifier>{5da4a503-d4b4-4b92-a7f6-a1de9ba41818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemEntity\02Model">
+      <UniqueIdentifier>{a7c71838-cbb2-4bd6-92d2-7f5e99d975b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\00DataBase">
+      <UniqueIdentifier>{339082c1-1db0-40fe-aad6-a6bf90b6bbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\01DropFunc">
+      <UniqueIdentifier>{b1640e01-4db1-4e90-b9c4-0f169a7a9a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\01DropFunc\Parser">
+      <UniqueIdentifier>{72dd36c6-5b2a-4bf9-b6ad-cf7fccb101ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\01DropFunc\Handler">
+      <UniqueIdentifier>{88ef8c46-b766-48e6-b1da-a4e0cab8ea46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\00StringData">
+      <UniqueIdentifier>{f7c37116-4835-48fc-b87c-55b5c10569de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\02UseFunc">
+      <UniqueIdentifier>{758a1e5d-b942-415c-af4d-9048bc193e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\01ItemState\03Model">
+      <UniqueIdentifier>{5f2d2050-9ebc-4f5e-9ecf-681c7115bc18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref">
+      <UniqueIdentifier>{863c175e-6cdb-44f2-8171-e238612bb28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref\ItemEntity">
+      <UniqueIdentifier>{76bb81ec-32f8-4bb0-932a-c3029e71c5cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref\ItemEntity\FlyFunc">
+      <UniqueIdentifier>{f18608f2-d5e6-4200-81bf-b4036c0f6f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref\ItemEntity\DropFunc">
+      <UniqueIdentifier>{7bdfd374-cde9-4806-87f2-97da37f3e30f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref\ItemState">
+      <UniqueIdentifier>{6ce89c84-73ef-4388-921f-718609a7f720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\08Item\00Ref\ItemState\UseFunc">
+      <UniqueIdentifier>{ce31fa19-f998-4410-a5c1-9e609778c29b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00DataBase">
+      <UniqueIdentifier>{70dfad6f-ecfc-4f03-916c-a43742c4a21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00StringData">
+      <UniqueIdentifier>{50907ecf-3f1e-4283-9942-6d5013af9f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\01EmojiAction">
+      <UniqueIdentifier>{9728dbde-6843-4eed-9199-ada8a3acbd0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\01EmojiAction\Parsers">
+      <UniqueIdentifier>{07000756-f783-4415-a265-60c32bdd05d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\01EmojiAction\Parsers\ParserBase">
+      <UniqueIdentifier>{6781afb0-8fa5-4d43-836d-34568b3ba52c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\01EmojiAction\Handler">
+      <UniqueIdentifier>{d79b505d-3551-4c14-93dd-73a15567cb11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\02Models">
+      <UniqueIdentifier>{f336d7d1-6a77-458d-9827-4f61da8a29aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\03LaEmojiPack">
+      <UniqueIdentifier>{9d59cfd5-891c-4ec1-9c37-b6077ab39e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\02Models\02LaEmoji">
+      <UniqueIdentifier>{b5994915-a84e-45ce-a70c-20c18a3ce7d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\02Models\01Dialog">
+      <UniqueIdentifier>{532af0f3-efaa-4b79-9082-b773b5a4c0ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\02Models\00Emoji">
+      <UniqueIdentifier>{90b9d034-6edf-4b84-8703-49500b7f697b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\03LaEmojiPack\00DataBase">
+      <UniqueIdentifier>{180e2454-7dc8-41f3-9d18-2a5ab937a8ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\03LaEmojiPack\01Model">
+      <UniqueIdentifier>{52fe0a6a-23a9-435c-bfff-478569257061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\03LaEmojiPack\00StringData">
+      <UniqueIdentifier>{93e751e1-6c97-4c14-8e1e-f67a896008c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00DataBase\01Dialog">
+      <UniqueIdentifier>{a936dae4-f4a2-43a2-a6bc-07361b96b5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00DataBase\00Emoji">
+      <UniqueIdentifier>{43f02ce4-81ef-4b33-abf9-35dfe5d5d5b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00DataBase\02LaEmoji">
+      <UniqueIdentifier>{5e014823-9e7d-445c-8b09-1f9844aa8e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00StringData\01Dialog">
+      <UniqueIdentifier>{f0b88874-988a-4934-be34-606c24c9ee9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00StringData\00Emoji">
+      <UniqueIdentifier>{d982bac6-59a8-4224-8045-1b1898a4edae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\00StringData\02LaEmoji">
+      <UniqueIdentifier>{31e1463c-e841-4213-897c-f8d975184fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\04System">
+      <UniqueIdentifier>{0175a7c3-3ff4-47b8-838e-44a4cfc439fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00DataBase">
+      <UniqueIdentifier>{ea3064f9-2cc6-4794-9261-9945c1142e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00DataBase\00Shape">
+      <UniqueIdentifier>{805215a7-4e2e-484f-85bd-39be0eecde0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00DataBase\01Body">
+      <UniqueIdentifier>{f293ffed-0a4a-4dcf-9ffe-0b78cbfcde36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00StringData">
+      <UniqueIdentifier>{9b10ef6a-5e68-4cc6-ae05-689c059ce6bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00StringData\01Body">
+      <UniqueIdentifier>{24c8fa52-25c7-4fe2-b750-dcaf8d2d4ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\00StringData\00Shape">
+      <UniqueIdentifier>{3ffd9800-1a60-48ee-9c07-bff43b69532f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\06Physics\000Ref">
+      <UniqueIdentifier>{2b8deb12-9ad0-421a-8dc4-dd455ff93467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB">
+      <UniqueIdentifier>{e1f77c41-ac2c-4800-9672-ea238883514d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\02Models">
+      <UniqueIdentifier>{c6622354-7813-485d-8045-99a0b63da530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\03Dialogue">
+      <UniqueIdentifier>{e2d9baf4-2eea-4c9c-a24b-07c36be9b493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\03Dialogue\00DB">
+      <UniqueIdentifier>{9a3e5211-8e15-47d5-88c7-179c0463081c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\03Dialogue\01M">
+      <UniqueIdentifier>{7e4267e1-9408-4d3c-ab52-7e14b0765fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\03Dialogue\00SD">
+      <UniqueIdentifier>{e64e8a48-5108-4a07-abe8-36b35ac3a4c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\03System">
+      <UniqueIdentifier>{58be9123-ee6b-46fb-bb4a-cc36d56eea21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\01MenuAction">
+      <UniqueIdentifier>{43a3e1b2-7d77-41fb-8708-57bea9bc9226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\01MenuAction\MenuAnimationHandler">
+      <UniqueIdentifier>{345a7551-1e05-4b09-95ce-56c02a1ea8e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\01MenuAction\MenuAnimationHandler\EnterAnimation">
+      <UniqueIdentifier>{17113300-17fd-4956-b0e1-ffff4c3c91fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\01MenuAction\MenuAnimationHandler\QuitAnimation">
+      <UniqueIdentifier>{985f404a-5b17-4cb1-98e2-1adb3421f796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\02Models\01UIItem">
+      <UniqueIdentifier>{97870751-0132-4420-91dd-5bdee41e3933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\02Models\02UIMenu">
+      <UniqueIdentifier>{41ad381a-e905-47a7-bf3b-9b36601cbfbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\00DataBase">
+      <UniqueIdentifier>{5bd429bb-8a19-4917-88f6-75927f264ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\01StringData">
+      <UniqueIdentifier>{5c7e8158-1db4-4071-a680-a5fbdae597ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\00DataBase\00Item">
+      <UniqueIdentifier>{2c8fcf2a-af22-41ce-af73-e98a86eb33e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\00DataBase\01Menu">
+      <UniqueIdentifier>{649048e0-7077-41bd-b281-956f36446afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\01StringData\00Item">
+      <UniqueIdentifier>{4aa4b1bf-c15d-44ce-a54e-05b42b6c59d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\00DB\01StringData\01Menu">
+      <UniqueIdentifier>{927c21fe-88e2-43c6-bd38-85c65229e4c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\000Ref">
+      <UniqueIdentifier>{d9dcdf28-b32a-4420-ae53-6e9c2a18fd7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\000Ref\Dialogue">
+      <UniqueIdentifier>{ac68d2c8-95d4-459d-851e-2bfef5b8af0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\000Ref\Menu">
+      <UniqueIdentifier>{fcd302d9-55d9-4737-9d14-22337e1a0e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07UI\000Ref\Handler">
+      <UniqueIdentifier>{eb36fd88-1cde-4d50-94bd-1e4343eaf8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\05LaEmoji\000Ref">
+      <UniqueIdentifier>{571a1b63-0414-4449-886e-188ec8aa244b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\01Effect\00Ref">
+      <UniqueIdentifier>{145345aa-2d24-429d-8a5f-392a62924eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\00Ref">
+      <UniqueIdentifier>{5234c051-103d-4e7a-a724-a6fe423b8095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\00Ref\Enemy">
+      <UniqueIdentifier>{0d3c2dfd-091f-49ba-b0e1-78df9e05ff39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\00Ref\Player">
+      <UniqueIdentifier>{dbb07a15-fd0c-4afd-8e71-44fce37e520f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\07Entity\00Ref\NPC">
+      <UniqueIdentifier>{f61af7a0-b15f-4698-a164-56fc6b61ca4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\00DB Base\00Ref">
+      <UniqueIdentifier>{6692e9be-a401-4c0f-84b2-1d8d70e901cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\00Ref">
+      <UniqueIdentifier>{e1b83066-ae18-4cda-bdd9-74a7c1ec0229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\02Animation\00Ref">
+      <UniqueIdentifier>{91cb16f9-f8d6-4395-94ac-7e9c3cae8485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\77Test">
+      <UniqueIdentifier>{9cb3eb0f-1dcb-4d9a-a368-44a8b06166e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\77Test\TestCase">
+      <UniqueIdentifier>{09dabf91-cc42-460a-b7cb-f7b3afa254be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\03Ctrl_MenuRandom">
+      <UniqueIdentifier>{0331aa7d-d500-4196-b89a-8cb89be350c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\01Ctrl_Simple">
+      <UniqueIdentifier>{6b43489d-fbd7-4dde-9c6e-7c7d74fdc9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\02Ctrl_AI">
+      <UniqueIdentifier>{d7e3e4ba-5c88-4931-b648-30a7e184f07e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\02Ctrl_AI\00Base">
+      <UniqueIdentifier>{865cc9eb-8f57-47a8-a051-f9ee958f5e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\02Ctrl_AI\01">
+      <UniqueIdentifier>{ab21b8e1-aef6-46f3-b11a-072e20662fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\03Controller\03CtrlCommon\00StepCtrl">
+      <UniqueIdentifier>{cfd75495-0d65-440f-be63-f1eec72eca84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src\77Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src\77Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_ebreed.cpp">
+      <Filter>src\07Entity\02Enemy\03Breed\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_unit.cpp">
+      <Filter>src\07Entity\02Enemy\03Breed\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_ebreed.cpp">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_eskill.cpp">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_ubreed.cpp">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PS_atk.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PS_spk.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_pSkill.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_pSkill.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_pSkill.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_player.cpp">
+      <Filter>src\07Entity\02Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_player.cpp">
+      <Filter>src\07Entity\02Player\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_callback.cpp">
+      <Filter>src\04Event\02Callback\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_callback.cpp">
+      <Filter>src\04Event\02Callback\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_dispatcher.cpp">
+      <Filter>src\04Event\02Dispatcher\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_dispatcher.cpp">
+      <Filter>src\04Event\02Dispatcher\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_eventHandler.cpp">
+      <Filter>src\04Event\01Event\01Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_listenerSet.cpp">
+      <Filter>src\04Event\03ListenerSet\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_listenerSet.cpp">
+      <Filter>src\04Event\03ListenerSet\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_event.cpp">
+      <Filter>src\04Event\01Event\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_event.cpp">
+      <Filter>src\04Event\01Event\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DP_positionWithin.cpp">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_dispatchHandler.cpp">
+      <Filter>src\04Event\02Dispatcher\01Model\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_dispatchParser.cpp">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser\ParserBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_eventHandlerPhysics.cpp">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EPP_playerBodyOnEnemy.cpp">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_eventParserPhysics.cpp">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Parser\ParserBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CP_testLog.cpp">
+      <Filter>src\04Event\02Callback\01Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_callbackHandler.cpp">
+      <Filter>src\04Event\02Callback\01Model\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_callbackParser.cpp">
+      <Filter>src\04Event\02Callback\01Model\Parser\ParserBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PS_dash.cpp">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PS_Standred.cpp">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PS_Dash.cpp">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PlayerState.cpp">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ref2PlayerState.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PlayerActivity.cpp">
+      <Filter>src\07Entity\02Player\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PlayerDebuff.cpp">
+      <Filter>src\07Entity\02Player\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ISDP_Default.cpp">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ISDP_Flying.cpp">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_ItemState.cpp">
+      <Filter>src\08Item\01ItemState\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_DropFuncParser.cpp">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ItemState.cpp">
+      <Filter>src\08Item\01ItemState\03Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_ItemState.cpp">
+      <Filter>src\08Item\01ItemState\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_UseFuncHandler.cpp">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_UseFuncParser.cpp">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ISUP_RestoreHp.cpp">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ISUP_RestoreMp.cpp">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ISUP_DamageToSelf.cpp">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Item.cpp">
+      <Filter>src\08Item\02System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_ItemEntity.cpp">
+      <Filter>src\08Item\01ItemEntity\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_ItemEntity.cpp">
+      <Filter>src\08Item\01ItemEntity\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_DropFuncHandler.cpp">
+      <Filter>src\08Item\01ItemState\01DropFunc\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_FEP_Blast.cpp">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_FEP_Default.cpp">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_FlyingEndFuncParser.cpp">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_FlyingEndFuncHandler.cpp">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ItemEntity.cpp">
+      <Filter>src\08Item\01ItemEntity\02Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Dialog.cpp">
+      <Filter>src\05LaEmoji\00DataBase\01Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Emoji.cpp">
+      <Filter>src\05LaEmoji\00DataBase\00Emoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_LaEmoji.cpp">
+      <Filter>src\05LaEmoji\00DataBase\02LaEmoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Dialog.cpp">
+      <Filter>src\05LaEmoji\00StringData\01Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Emoji.cpp">
+      <Filter>src\05LaEmoji\00StringData\00Emoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_LaEmoji.cpp">
+      <Filter>src\05LaEmoji\00StringData\02LaEmoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Dialog.cpp">
+      <Filter>src\05LaEmoji\02Models\01Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Emoji.cpp">
+      <Filter>src\05LaEmoji\02Models\00Emoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_LaEmoji.cpp">
+      <Filter>src\05LaEmoji\02Models\02LaEmoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_PageEmoji.cpp">
+      <Filter>src\05LaEmoji\02Models\02LaEmoji</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_LaEmoji.cpp">
+      <Filter>src\05LaEmoji\04System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_LaEmojiPack.cpp">
+      <Filter>src\05LaEmoji\03LaEmojiPack\00DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_LaEmojiPack.cpp">
+      <Filter>src\05LaEmoji\03LaEmojiPack\01Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_LaEmojiPack.cpp">
+      <Filter>src\05LaEmoji\03LaEmojiPack\00StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EmojiActionParser.cpp">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers\ParserBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EmojiActionHandler.cpp">
+      <Filter>src\05LaEmoji\01EmojiAction\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EEP_Default.cpp">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EEP_FadeIn.cpp">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Npc.cpp">
+      <Filter>src\07Entity\02NPC\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Npc.cpp">
+      <Filter>src\07Entity\02NPC\SD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Npc.cpp">
+      <Filter>src\07Entity\02NPC\M</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SplashScene.cpp">
+      <Filter>src\77Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_MenuAnimationHandler.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_MenuAnimationParser.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MEAP_FadeIn.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\EnterAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MEAP_Force.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\EnterAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MQAP_ForceOut.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\QuitAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MQAP_FadeOut.cpp">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\QuitAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DP_LeftClickOnThis.cpp">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DP_LeftClickOnUIItem.cpp">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ActionParser.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_FadeIn.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_ModeTo.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_Animate.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ActionHandler.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_UI_Layer.cpp">
+      <Filter>src\77Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_FadeOut.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DCCP_DialogueEnd.cpp">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DCCP_LaCtrlLeft.cpp">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DCCP_LaCtrlRight.cpp">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Dialogue.cpp">
+      <Filter>src\07UI\03Dialogue\00DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Dialogue.cpp">
+      <Filter>src\07UI\03Dialogue\00SD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Dialogue.cpp">
+      <Filter>src\07UI\03Dialogue\01M</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ScriptParser.cpp">
+      <Filter>src\99Working</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_ScriptParserJudge.cpp">
+      <Filter>src\99Working</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Scene.cpp">
+      <Filter>src\99Working\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Scene.cpp">
+      <Filter>src\99Working\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Scene.cpp">
+      <Filter>src\99Working</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_GameLayer.cpp">
+      <Filter>src\99Working\GameLayer\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_GameLayer.cpp">
+      <Filter>src\99Working\GameLayer\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_GameLayerBase.cpp">
+      <Filter>src\99Working\GameLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_GameLayerCommon.cpp">
+      <Filter>src\99Working\GameLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_SplashLayer.cpp">
+      <Filter>src\99Working\SplashLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_SplashLayer.cpp">
+      <Filter>src\99Working\SplashLayer\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_SplashLayer.cpp">
+      <Filter>src\99Working\SplashLayer\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Save%28Player%29.cpp">
+      <Filter>src\99Working\SaveData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Save%28Scene%29.cpp">
+      <Filter>src\99Working\SaveData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Save%28Basic%29.cpp">
+      <Filter>src\99Working\SaveData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_EnvirBlast.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MAP_EntityBlast.cpp">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Shadow.cpp">
+      <Filter>src\07Entity\01Base\00Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_MainMenu.cpp">
+      <Filter>src\99Working\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_Player.cpp">
+      <Filter>src\03Controller\04CtrlPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_Camera.cpp">
+      <Filter>src\03Controller\03CtrlCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Test_Layer.cpp">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Test_Scene.cpp">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ref2TestCase.h">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ME_Blur.cpp">
+      <Filter>src\01Effect\02Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_amor.cpp">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_amor.cpp">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_weapon.cpp">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_amor.cpp">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_weapon.cpp">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_wbreed.cpp">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Animate.cpp">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Animation.cpp">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_AnimationPack.cpp">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_Animation.cpp">
+      <Filter>src\02Animation\01StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_AnimationPack.cpp">
+      <Filter>src\02Animation\01StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_Base.cpp">
+      <Filter>src\03Controller\03CtrlBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_pCtrl.cpp">
+      <Filter>src\03Controller\02StringData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_Ctrl.cpp">
+      <Filter>src\03Controller\02DataBase\00Ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_pCtrl.cpp">
+      <Filter>src\03Controller\02DataBase\01CtrlPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_Ctrl.cpp">
+      <Filter>src\03Controller\01System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_AnimationPack.cpp">
+      <Filter>src\02Animation\02AnimaitonPack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DataBase.cpp">
+      <Filter>src\00DB Base\01DB Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EffectSprite.cpp">
+      <Filter>src\01Effect\01EffectSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Effect.cpp">
+      <Filter>src\01Effect\02Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ref_Effect.h">
+      <Filter>src\01Effect\00Ref</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_eskill.cpp">
+      <Filter>src\07Entity\02Enemy\05Skill\00EskillBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EDash.cpp">
+      <Filter>src\07Entity\02Enemy\05Skill\01EDash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_esshot.cpp">
+      <Filter>src\07Entity\02Enemy\05Skill\01EShot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EnemyState.cpp">
+      <Filter>src\07Entity\02Enemy\04State\00EStateBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ES_Standred.cpp">
+      <Filter>src\07Entity\02Enemy\04State\01EStateStandred</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ES_Dash.cpp">
+      <Filter>src\07Entity\02Enemy\04State\02EStateDash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_Enemy.cpp">
+      <Filter>src\07Entity\02Enemy\06Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EnemyActivity.cpp">
+      <Filter>src\07Entity\02Enemy\06Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_EnemyDebuff.cpp">
+      <Filter>src\07Entity\02Enemy\06Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity.cpp">
+      <Filter>src\07Entity\01Base\01Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_eventListener.cpp">
+      <Filter>src\04Event\05System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_phybody.cpp">
+      <Filter>src\06Physics\00DataBase\01Body</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_physhape.cpp">
+      <Filter>src\06Physics\00DataBase\00Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PhysicsStringData.cpp">
+      <Filter>src\06Physics\00StringData\01Body</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShapeStringData.cpp">
+      <Filter>src\06Physics\00StringData\00Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sys_UI.cpp">
+      <Filter>src\07UI\03System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_UI_Item.cpp">
+      <Filter>src\07UI\02Models\01UIItem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_UI_Menu.cpp">
+      <Filter>src\07UI\02Models\02UIMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_UI_Item.cpp">
+      <Filter>src\07UI\00DB\01StringData\00Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SD_UI_Menu.cpp">
+      <Filter>src\07UI\00DB\01StringData\01Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_UI_Item.cpp">
+      <Filter>src\07UI\00DB\00DataBase\00Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DB_UI_Menu.cpp">
+      <Filter>src\07UI\00DB\00DataBase\01Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_Simple.cpp">
+      <Filter>src\03Controller\03CtrlCommon\01Ctrl_Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_MenuRandom.cpp">
+      <Filter>src\03Controller\03CtrlCommon\03Ctrl_MenuRandom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Ctrl_AI.cpp">
+      <Filter>src\03Controller\03CtrlCommon\02Ctrl_AI\00Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_StepHandler.cpp">
+      <Filter>src\03Controller\03CtrlCommon\00StepCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\M_StepParser.cpp">
+      <Filter>src\03Controller\03CtrlCommon\00StepCtrl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src\77Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src\77Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_ebreed.h">
+      <Filter>src\07Entity\02Enemy\03Breed\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_unit.h">
+      <Filter>src\07Entity\02Enemy\03Breed\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_ebreed.h">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_eskill.h">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_ubreed.h">
+      <Filter>src\07Entity\02Enemy\03Breed\StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Animation.h">
+      <Filter>src\02Animation\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Animation.h">
+      <Filter>src\02Animation\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Controller.h">
+      <Filter>src\03Controller\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Controller.h">
+      <Filter>src\03Controller\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_DataBase.h">
+      <Filter>src\00DB Base\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2DataBase.h">
+      <Filter>src\00DB Base\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Entity.h">
+      <Filter>src\07Entity\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Entity.h">
+      <Filter>src\07Entity\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Ebreed.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Ebreed.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Eskill.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_LaEmoji.h">
+      <Filter>src\05LaEmoji\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2LaEmoji.h">
+      <Filter>src\05LaEmoji\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Physics.h">
+      <Filter>src\06Physics\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Physics.h">
+      <Filter>src\06Physics\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Player.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Player.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_PS_atk.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_PS_spk.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_pSkill.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_pSkill.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_pSkill.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Pskill.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Pskill.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_player.h">
+      <Filter>src\07Entity\02Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_EventSystem.h">
+      <Filter>src\04Event\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2EventSystem.h">
+      <Filter>src\04Event\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Callback.h">
+      <Filter>src\04Event\00Ref\Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Callback.h">
+      <Filter>src\04Event\00Ref\Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Dispatcher.h">
+      <Filter>src\04Event\00Ref\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Dispatcher.h">
+      <Filter>src\04Event\00Ref\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_ListenerSet.h">
+      <Filter>src\04Event\00Ref\ListenerSet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2ListenerSet.h">
+      <Filter>src\04Event\00Ref\ListenerSet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Event.h">
+      <Filter>src\04Event\00Ref\EventSingle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Event.h">
+      <Filter>src\04Event\00Ref\EventSingle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_callback.h">
+      <Filter>src\04Event\02Callback\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_callback.h">
+      <Filter>src\04Event\02Callback\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_dispatcher.h">
+      <Filter>src\04Event\02Dispatcher\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_dispatcher.h">
+      <Filter>src\04Event\02Dispatcher\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_eventHandler.h">
+      <Filter>src\04Event\01Event\01Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_listenerSet.h">
+      <Filter>src\04Event\03ListenerSet\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_listenerSet.h">
+      <Filter>src\04Event\03ListenerSet\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_event.h">
+      <Filter>src\04Event\01Event\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_event.h">
+      <Filter>src\04Event\01Event\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_CbHandler.h">
+      <Filter>src\04Event\00Ref\Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_DHandler.h">
+      <Filter>src\04Event\00Ref\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_EHandler.h">
+      <Filter>src\04Event\00Ref\EventSingle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_EventPhysics.h">
+      <Filter>src\04Event\00Ref\PhysicsParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2EventPhysics.h">
+      <Filter>src\04Event\00Ref\PhysicsParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DP_positionWithin.h">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_dispatchHandler.h">
+      <Filter>src\04Event\02Dispatcher\01Model\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_dispatchParser.h">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser\ParserBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_eventHandlerPhysics.h">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EPP_playerBodyOnEnemy.h">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_eventParserPhysics.h">
+      <Filter>src\04Event\04PhysicsEvent\00Model\Parser\ParserBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CP_testLog.h">
+      <Filter>src\04Event\02Callback\01Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_callbackHandler.h">
+      <Filter>src\04Event\02Callback\01Model\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_callbackParser.h">
+      <Filter>src\04Event\02Callback\01Model\Parser\ParserBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Enum.h">
+      <Filter>src\00Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_player.h">
+      <Filter>src\07Entity\02Player\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_PS_dash.h">
+      <Filter>src\07Entity\02Player\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Enemy.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Enemy.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PS_Standred.h">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PS_Dash.h">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_PlayerState.h">
+      <Filter>src\07Entity\02Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Ref_EnemyState.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Ref2EnemyState.h">
+      <Filter>src\07Entity\00Ref\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_PlayerState.h">
+      <Filter>src\07Entity\00Ref\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ISDP_Default.h">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ISDP_Flying.h">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_ItemState.h">
+      <Filter>src\08Item\01ItemState\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_DropFuncParser.h">
+      <Filter>src\08Item\01ItemState\01DropFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_ItemState.h">
+      <Filter>src\08Item\01ItemState\03Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_ItemState.h">
+      <Filter>src\08Item\01ItemState\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_UseFuncHandler.h">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_UseFuncParser.h">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ISUP_RestoreHp.h">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Item.h">
+      <Filter>src\08Item\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ISUP_RestoreMp.h">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ISUP_DamageToSelf.h">
+      <Filter>src\08Item\01ItemState\02UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EnumAdvenTri.h">
+      <Filter>src\00Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_Item.h">
+      <Filter>src\08Item\02System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_ItemEntity.h">
+      <Filter>src\08Item\01ItemEntity\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_ItemEntity.h">
+      <Filter>src\08Item\01ItemEntity\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_DropFuncHandler.h">
+      <Filter>src\08Item\01ItemState\01DropFunc\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_FEP_Blast.h">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_FEP_Default.h">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_FlyingEndFuncParser.h">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_FlyingEndFuncHandler.h">
+      <Filter>src\08Item\01ItemEntity\01FlyEndFunc\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_ItemEntity.h">
+      <Filter>src\08Item\01ItemEntity\02Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Dialog.h">
+      <Filter>src\05LaEmoji\00DataBase\01Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Emoji.h">
+      <Filter>src\05LaEmoji\00DataBase\00Emoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_LaEmoji.h">
+      <Filter>src\05LaEmoji\00DataBase\02LaEmoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Dialog.h">
+      <Filter>src\05LaEmoji\00StringData\01Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Emoji.h">
+      <Filter>src\05LaEmoji\00StringData\00Emoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_LaEmoji.h">
+      <Filter>src\05LaEmoji\00StringData\02LaEmoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Dialog.h">
+      <Filter>src\05LaEmoji\02Models\01Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Emoji.h">
+      <Filter>src\05LaEmoji\02Models\00Emoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_LaEmoji.h">
+      <Filter>src\05LaEmoji\02Models\02LaEmoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_PageEmoji.h">
+      <Filter>src\05LaEmoji\02Models\02LaEmoji</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_LaEmoji.h">
+      <Filter>src\05LaEmoji\04System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_LaEmojiPack.h">
+      <Filter>src\05LaEmoji\03LaEmojiPack\00DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_LaEmojiPack.h">
+      <Filter>src\05LaEmoji\03LaEmojiPack\01Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_LaEmojiPack.h">
+      <Filter>src\05LaEmoji\03LaEmojiPack\00StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_LaEmojiPack.h">
+      <Filter>src\05LaEmoji\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EmojiActionParser.h">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers\ParserBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EmojiActionHandler.h">
+      <Filter>src\05LaEmoji\01EmojiAction\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EEP_Default.h">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EEP_FadeIn.h">
+      <Filter>src\05LaEmoji\01EmojiAction\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_EmojiAction.h">
+      <Filter>src\05LaEmoji\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Npc.h">
+      <Filter>src\07Entity\02NPC\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Npc.h">
+      <Filter>src\07Entity\02NPC\SD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Npc.h">
+      <Filter>src\07Entity\02NPC\M</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Npc.h">
+      <Filter>src\07Entity\00Ref\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Npc.h">
+      <Filter>src\07Entity\00Ref\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SplashScene.h">
+      <Filter>src\77Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_MenuAnimationHandler.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_MenuAnimationParser.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MEAP_FadeIn.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\EnterAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MEAP_Force.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\EnterAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MQAP_ForceOut.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\QuitAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MQAP_FadeOut.h">
+      <Filter>src\07UI\01MenuAction\MenuAnimationHandler\QuitAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2ItemSystem.h">
+      <Filter>src\08Item\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_DropFunc.h">
+      <Filter>src\08Item\00Ref\ItemEntity\DropFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2DropFunc.h">
+      <Filter>src\08Item\00Ref\ItemEntity\DropFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_FlyFunc.h">
+      <Filter>src\08Item\00Ref\ItemEntity\FlyFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2FlyEndFunc.h">
+      <Filter>src\08Item\00Ref\ItemEntity\FlyFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_ItemEntity.h">
+      <Filter>src\08Item\00Ref\ItemEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2ItemEntity.h">
+      <Filter>src\08Item\00Ref\ItemEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_ItemState.h">
+      <Filter>src\08Item\00Ref\ItemState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2ItemState.h">
+      <Filter>src\08Item\00Ref\ItemState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_UseFunc.h">
+      <Filter>src\08Item\00Ref\ItemState\UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2UseFunc.h">
+      <Filter>src\08Item\00Ref\ItemState\UseFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DP_LeftClickOnThis.h">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DP_LeftClickOnUIItem.h">
+      <Filter>src\04Event\02Dispatcher\01Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_ActionParser.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_FadeIn.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_MoveTo.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_Animate.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_ActionHandler.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_ActionHandler.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2ActionHandler.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_UI_Layer.h">
+      <Filter>src\77Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_FadeOut.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DCCP_DialogueEnd.h">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DCCP_LaCtrlLeft.h">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DCCP_LaCtrlRight.h">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_DialogueCtrl.h">
+      <Filter>src\04Event\02Callback\01Model\Parser\DialogueCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Dialogue.h">
+      <Filter>src\07UI\03Dialogue\00DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Dialogue.h">
+      <Filter>src\07UI\03Dialogue\00SD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Dialogue.h">
+      <Filter>src\07UI\03Dialogue\01M</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Dialogue.h">
+      <Filter>src\07UI\000Ref\Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Dialogue.h">
+      <Filter>src\07UI\000Ref\Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_UIItem.h">
+      <Filter>src\07UI\000Ref\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_UIMenu.h">
+      <Filter>src\07UI\000Ref\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2UIItem.h">
+      <Filter>src\07UI\000Ref\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2UIMenu.h">
+      <Filter>src\07UI\000Ref\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_MenuAnimationHandler.h">
+      <Filter>src\07UI\000Ref\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_UIHandler.h">
+      <Filter>src\07UI\000Ref\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2MenuAnimationHandler.h">
+      <Filter>src\07UI\000Ref\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_UI.h">
+      <Filter>src\07UI\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2UI.h">
+      <Filter>src\07UI\000Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_ScriptParser.h">
+      <Filter>src\99Working</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Scene.h">
+      <Filter>src\99Working\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Scene.h">
+      <Filter>src\99Working\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_Scene.h">
+      <Filter>src\99Working</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_SceneSystem.h">
+      <Filter>src\99Working</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2SceneSystem.h">
+      <Filter>src\99Working</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_GameLayer.h">
+      <Filter>src\99Working\GameLayer\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_GameLayer.h">
+      <Filter>src\99Working\GameLayer\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_GameLayerBase.h">
+      <Filter>src\99Working\GameLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_GameLayerCommon.h">
+      <Filter>src\99Working\GameLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_GameLayer.h">
+      <Filter>src\99Working\GameLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_SplashLayer.h">
+      <Filter>src\99Working\SplashLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_SplashLayer.h">
+      <Filter>src\99Working\SplashLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_SplashLayer.h">
+      <Filter>src\99Working\SplashLayer\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_SplashLayer.h">
+      <Filter>src\99Working\SplashLayer\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_Save.h">
+      <Filter>src\99Working\SaveData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_Save.h">
+      <Filter>src\99Working\SaveData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_EnvirBlast.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MAP_EntityBlast.h">
+      <Filter>src\02Animation\02ActionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Shadow.h">
+      <Filter>src\07Entity\01Base\00Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_GameMenu.h">
+      <Filter>src\99Working\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_MainMenu.h">
+      <Filter>src\99Working\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_Player.h">
+      <Filter>src\03Controller\04CtrlPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_Camera.h">
+      <Filter>src\03Controller\03CtrlCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Test_Layer.h">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Test_Scene.h">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_TestCase.h">
+      <Filter>src\77Test\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ME_Blur.h">
+      <Filter>src\01Effect\02Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_amor.h">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_amor.h">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_weapon.h">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_amor.h">
+      <Filter>src\07Entity\02Enemy\01Amor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_weapon.h">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_wbreed.h">
+      <Filter>src\07Entity\02Enemy\02Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Animate.h">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Animation.h">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_AnimationPack.h">
+      <Filter>src\02Animation\01DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Animate.h">
+      <Filter>src\02Animation\01StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Animation.h">
+      <Filter>src\02Animation\01StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_AnimationPack.h">
+      <Filter>src\02Animation\01StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_Base.h">
+      <Filter>src\03Controller\03CtrlBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_pCtrl.h">
+      <Filter>src\03Controller\02StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_Ctrl.h">
+      <Filter>src\03Controller\02DataBase\00Ctrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_pCtrl.h">
+      <Filter>src\03Controller\02DataBase\01CtrlPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_Ctrl.h">
+      <Filter>src\03Controller\02StringData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_Ctrl.h">
+      <Filter>src\03Controller\01System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_AnimationPack.h">
+      <Filter>src\02Animation\02AnimaitonPack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringData.h">
+      <Filter>src\00DB Base\01DB Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase.h">
+      <Filter>src\00DB Base\01DB Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EffectSprite.h">
+      <Filter>src\01Effect\01EffectSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Effect.h">
+      <Filter>src\01Effect\02Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref2Effect.h">
+      <Filter>src\01Effect\00Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_eskill.h">
+      <Filter>src\07Entity\02Enemy\05Skill\00EskillBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EDash.h">
+      <Filter>src\07Entity\02Enemy\05Skill\01EDash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_esshot.h">
+      <Filter>src\07Entity\02Enemy\05Skill\01EShot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_EnemyState.h">
+      <Filter>src\07Entity\02Enemy\04State\00EStateBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ES_Standred.h">
+      <Filter>src\07Entity\02Enemy\04State\01EStateStandred</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ES_Dash.h">
+      <Filter>src\07Entity\02Enemy\04State\02EStateDash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_Enemy.h">
+      <Filter>src\07Entity\02Enemy\06Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity.h">
+      <Filter>src\07Entity\01Base\01Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_eventListener.h">
+      <Filter>src\04Event\05System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_phybody.h">
+      <Filter>src\06Physics\00DataBase\01Body</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_physhape.h">
+      <Filter>src\06Physics\00DataBase\00Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsStringData.h">
+      <Filter>src\06Physics\00StringData\01Body</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShapeStringData.h">
+      <Filter>src\06Physics\00StringData\00Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sys_UI.h">
+      <Filter>src\07UI\03System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_UI_Item.h">
+      <Filter>src\07UI\02Models\01UIItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_UI_Menu.h">
+      <Filter>src\07UI\02Models\02UIMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_UI_Item.h">
+      <Filter>src\07UI\00DB\01StringData\00Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SD_UI_Menu.h">
+      <Filter>src\07UI\00DB\01StringData\01Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_UI_Item.h">
+      <Filter>src\07UI\00DB\00DataBase\00Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DB_UI_Menu.h">
+      <Filter>src\07UI\00DB\00DataBase\01Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_Simple.h">
+      <Filter>src\03Controller\03CtrlCommon\01Ctrl_Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_MenuRandom.h">
+      <Filter>src\03Controller\03CtrlCommon\03Ctrl_MenuRandom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ctrl_AI.h">
+      <Filter>src\03Controller\03CtrlCommon\02Ctrl_AI\00Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ref_StepCtrl.h">
+      <Filter>src\03Controller\03CtrlCommon\00StepCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_StepHandler.h">
+      <Filter>src\03Controller\03CtrlCommon\00StepCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\M_StepParser.h">
+      <Filter>src\03Controller\03CtrlCommon\00StepCtrl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

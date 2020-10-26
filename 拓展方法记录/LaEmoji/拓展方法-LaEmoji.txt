@@ -1,0 +1,15 @@
+添加新类型的EmojiAnimationParser：
+
+程序部分
+
+1.在筛选器EmojiActionParser中创建新类MAP_XXX继承自M_ActionParser
+2.实现虚函数GetAction(Node*,vector<string>)
+3.在Ref_EmojiAction.h中注册该Parser类
+4.在类M_EmojiEnterHandler的init()操作中为Parser加入MAP_XXX的注册
+
+文档部分
+1.在数据库格式-LaEmoji.txt中记录 使用的参数形式
+2.在系统记录-LaEmoji.txt中记录 该Action的形式
+
+其余添加：
+确保其余csv正确的情况下，填写 SD 并 n++即可。

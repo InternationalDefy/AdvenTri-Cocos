@@ -1,0 +1,5 @@
+3,//总行数
+Name,UiSet,ItemEntity,usingTime,usingAnimateName,PickUpAnimate,dropcallfunc,numberparam,params[i],numberOfuseCallfunc(k)以下1->k int UseCallfuncUseCallfuncType,NumberOfParam,ItemCallfuncType[i] params,
+Test_Item_State_1,None,Test_Item_Entity_1,1,Test_Item_1_Using,Test_Item_1_Pickup,Default,0,1,RestoreHp,1,1,
+Test_Item_State_2,None,Test_Item_Entity_2,2,Test_Item_2_Using,Test_Item_2_Pickup,Flying,1,15000,2,RestoreMp,1,3,DamageToSelf,3,Curse,1,10,
+Test_Item_State_3,,Test_Item_Entity_3,2,Test_Item_3_Using,Test_Item_3_Pickup,Flying,1,-15000,2,RestoreHp,1,1,RestoreMp,1,1,

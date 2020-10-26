@@ -1,0 +1,31 @@
+2,注意！这个SD的结尾需要两个'\n'
+Line 1:		Name,NumberOfGameScenes(n1),NumberOfSplashScenes(n2),
+/n
+Line 2Xn1 1:	NumberOfScripts(m),1->m,Scripts
+Line 2Xn1 2:	GameLayerName
+/n
+Line 2Xn2 1:	NumberOfSplashSceneName(m),1->m,Scripts
+Line 2Xn2 2:	SplashSceneName
+/n
+Test_Scene_1,2,2,
+//GameLayer WIth Scripts(2)
+9,INT,16,INT,4,MUL,INT,63,>,RET_BOOL,
+Test_GameLayer_2,
+6,INT,15,INT,16,<,RET_BOOL,
+Test_GameLayer_1,
+//SplashScenes Witth Scripts(2)
+6,INT,15,INT,16,<,RET_BOOL,
+Test_SplashScene_1,
+9,INT,16,INT,4,MUL,INT,63,>,RET_BOOL,
+Test_SplashScene_2,
+
+Test_Scene_2,1,2,
+//GameLayer WIth Scripts(1)
+6,INT,15,INT,16,<,RET_BOOL,
+Test_GameLayer_1,
+//SplashScenes Witth Scripts(2)
+6,INT,15,INT,16,<,RET_BOOL,
+Test_SplashScene_1,
+9,INT,16,INT,4,MUL,INT,63,>,RET_BOOL,
+Test_SplashScene_2,
+

@@ -1,0 +1,10 @@
+8,
+AnimationName,AnimationType,NumberOfParam,Params1->m,
+AnimationA,Animate,1,NameA,
+AnimationB,FadeIn,1,2,
+AnimationC,MoveTo,3,10,1280,720,
+AnimationD,EnvirBlast,3,EndSelected.png,10,300,//dt,multi
+AnimationE,FadeOut,1,10,
+AnimationF,EntityBlast,3,EndSelected.png,10,300,
+MainMenuPencil,Animate,1,MainMenuPencil,
+AnimationG,FadeIn,1,10,

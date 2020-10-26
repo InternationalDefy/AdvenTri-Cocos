@@ -1,0 +1,32 @@
+本周有远哭5，使人很为难，但是仍需要对自己立一个目标，至少完成NPC类的构建和析构器的实现。
+参考上周的设计来考虑NPC类的实现，先考虑NPC类需要哪些DB，SD，以及是否需要Sys
+
+NPC类设计：
+类似于Enemy类但是没有那么丰富的方法。
+-amor -weapon -debuff -skills -state
+~animationPack ~listenerSet ~controller ~uiSet ~physicsBody
++speak +Map<AdvenTriEnum::DamageType,bool> volunableTo
+NPC类需要一个类似于Enemy的Debuff体系？来控制是否消亡？否！直接控制Vulnerable即可。
+
+今天要依据NPC类得考量来设计其内容，同时进行文件派发。
+Table_NpcBreed.csv SD_nBreed DB_nBreed M_Npc Ref_Npc Ref2Npc
+Table_NpcBreed.csv
+n,
+Name,textureName,LanguagePackName,animationPackName,physicsBodyName,eventListenerName,uiName,controllerName,int numberOfVulnerable,Vulnerables,
+*****************
+以上为22&23日志
+*****************
+今天先完善M_Npc类。然后将第一波素材实装并看一看效果。
+speak方法所需要的逻辑比较复杂，现在予以考虑。
+考虑结束，主要靠Event设置。
+上课回来实装材质试试。
+*****************
+以上为27日日志
+*****************
+远哭5很无聊，不能再划了
+今天先尝试把素材实装到游戏里看效果。实装测试结束之后要开始做体力活，即写析构器。最后要开始AI模块的设计。emmmm，看起来除了场景类几乎没有必要写析构因为AddChild会很好的管理内存，vector和string也会自行销毁。那先实装素材，再开始AI模块的设计。
+抖动问题又一次出现，CPU占用率出奇的低，开始寻找根源。
+没有找到根源，但是问题解决了。怕的不是CPU占用率高，而是性能明明很差还不用CPU 现在对素材和数据进行处理实装。
+
+素材实装时发现了包括数据库存放位置容易混乱，素材部分不完善，有些不能言传达意的问题。也许需要重新派发。。。
+发现问题所在，因为Wps把最长一行的最后一个","省略了。

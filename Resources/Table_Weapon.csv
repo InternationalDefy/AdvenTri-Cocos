@@ -1,0 +1,6 @@
+4,//×ÜÐÐÊý
+name,physicsName,textureName,brokenanimationName,DamageType,DamagePoint,
+w_string,oops,13.png,,Poison,4,
+w_string,oops,13.png,,Poison,3,
+w_string,oops,13.png,,Poison,2,
+TestWeapon,TestWeaponPhysicsBody,TestWeapon.png,,Poison,1,

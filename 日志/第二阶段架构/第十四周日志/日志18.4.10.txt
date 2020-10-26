@@ -1,0 +1,138 @@
+1 需要组织一个UI层，一个场景添加两个层，Ui系统作为一个单例而出现，使用getInstance方法来获取一个拥有参数调用的合适的UI层
+2 在Sys_UI中组织一个数据库DB_UI多层级逻辑结构。表示已有UI的实现材质和使用方案，有很多的注释行。而UILayer以及各种初始化图像。参数等的设置在Sys_UI中实现
+3 载入页面也可以通过Sys_UI设置其形态，同时作为不同于UILayer的类LoadingScene出现，在MainSceneLoading时使用回调函数创建MainScene，但是。
+效率问题未知，是否能双线加载资源未知。这里需要考虑：先做实验考虑其效率如何，如果不行，则只能手动双线程。
+4？ 使用类似于对象池模式的方法处理场景类和UI层的互动。UI层对场景类是部分可见的，场景类持有UI层的实例指针。场景类对UI层不可见。UI层拥有部分public方法向其添加UI元件，可以被场景类调用。场景类中的元素，包括实体，逻辑实体等需要使用UI的场景元件持有UI系统数据库中的UI Set（实质是StringData）实体类对UI层不可见。场景类在创建实体时利用其UISet数据元 向UI层派发信息，并将其对应的指针传送给UI元件的构造器中作为初始化参数而使用。此过程可能需要由全局可见的Sys_UI来完成。
+4？ 考虑观察者模式已经实现和游戏固有的信息派发机制：可以在场景层派发信息给UI层，在UI层的每一个元件创建并初始化时添加其监听器。如此设计需要考虑一个对话框的完全实现问题：通常情况下的表情表述更多的是在场景层的动作而非UI层沟通的实际UI，而对话发生时则进入对话框状态？这样不好，以为丧失了艺术性实现的可行性和灵活性。那应该如何保持UI层同步？又保证绝大多数UI逻辑在UI层中？
+如果完全使用观察者模式实现，那么只要有UI实现，每个实体的每一步都需要信息的派发。效率堪忧。
+5 很显然我们需要一个能够由脚本控制的类来处理 对话类，也许叫做 M_Speech 而，M_Speech应该是场景层的还是UI层的组件呢？
+
+4 设计决定
+使用观察者模式实现。
+在游戏逻辑上是需要修改UI的操作，完全由UI层完成，其使用事件监听机制，用派发事件和注册监听器的形式实现场景层和UI的双向沟通。
+场景类在完全实现的时候也可以将ListenerSet作为一个类而使用。
+这里要注意维护一个事件信息表。记录不同事件的派发者和接收者以避免误操。
+
+5 设计决定
+普通的言语，类似FuckU之类的出现作为场景类的一部分而存在，属于实体的子节点。
+场景需要一个对话状态，但不一定是对话框状态，而是对话触发状态。当前状态启动UI层的Controller，并且设置Swallow，实体层的Controller依然可以使用但是选取事件会被Swallow。操作实体离开则可以结束对话，以派发事件的形式使UI层DisableController，同时结束对话触发状态。
+对话状态的进入和退出，牵扯到相机视角的变换，这里自然需要UI层持有主角类的指针，用以访问和控制相机控制器。相机控制器的外部接口有用啦！希望我还没删掉它。
+
+*****************
+以上为3日日志
+*****************
+今天要实现M_UIMenu和M_UIItem的属性设置和解析器配置。也许需要在Enum类里添加类别解析
+对Response即时设计的一种解析，
+1 Response函数添加多种重载，其意在可以方便并排查错误的执行Response操作
+2 Response操作处理的是Item的内部逻辑，设置Response状态，进行Response动画等 并不处理其具有的外部逻辑。
+3 Response的外部逻辑在Menu和Item两个层面都有，实际上以ListenerCall即EventSys的外部接口实现。
+4 AnimationPack应当拓展，因为需要很多独立的Action，如Active Response ResponseEnd DeActive
+现在为了建立能够创建并测试UIItem功能的类而创建SysUI
+似乎DB UIItem没有合理的处理 offsetPos，添加新属性。
+
+成功的创建了Item 但是对ListenerSet的设置和由Menu控制的组合位置动画操作尚不明晰。先写实验报告，溜了。
+*****************
+以上为8日日志
+*****************
+今天要实现Menu类，和对Item的组合位置动画操作。
+cameraControl有一个问题：cctrl要在Scene创建之后才能够创建，但是UILayer的添加是在Scene创建的过程中？
+实验！
+camera是在第一次update中被设置并传送给Scene的。
+可以想到的一种设计，在实体层类中设置bool first，执行第一次update时所进行的初始化，这样可以，但是慢。
+有别的处理方案？有？
+楼上SB！
+所有的菜单除初始菜单外全部是即时创建的，所以不用担心。
+添加相机设置和位置更新机制，现在考虑对UI_Menu的创建操作。
+可能需要开始Handler和Parser的再构建。
+menuactive和deactive操作目前没有完善，只有一句log
+修改名称，active和deactive不合适，应该改为enter和quit
+在DB animationPack和Item Menu中都应当修改。9:41 2018/4/10
+初步实现了MenuItem的创建，目前没有完成的问题：
+1 enterAction的双设置（需要Handler-Parser体系的构建）
+2 合理的时间addChild setZorder和位置设定（也许属于UILayer所管）
+下一个类将是H-P，和UILayer
+当前阶段存在问题：
+1 摄像机不能正确的跟随
+2 视角转换根本没有实现
+3 透明度和Zorder都没有正确的设置
+似乎无法正确的显示，结果是设置独立入场动画有误。
+考虑应该换一个地方实现其设置。
+UILayer和CameraFlag应该可以完成相机使用问题。
+尝试先使用CameraFlag
+不行，需要在UILayer创建以后再做考虑了。
+*****************
+以上为9日日志
+*****************
+使用单Camera也不是不可以，把Position改为OffSet尝试。
+实现了单相机的offposition和opacity设定。
+下一步是实现视角转换和Zorder设定。
+ZOrder不用设定，考虑到几乎没有覆盖的可能，只需要设计UILayer的Zorder和Menu的ZOrder即可。
+之后再UILaye实现后Sys UI 中加入操作addToUiLayer可以实现Zorder的正确控制。
+所以目前的任务是实现视角转换。
+进过一些考虑，似乎没有必要实现convert操作：
+1 enteranimation可以在menu创建之后被parse，menu在创建时可以直接访问cc获取视角位置
+1.5 这里对楼上所言加以记录和注释，enter操作是在已经知道menuPosition和viewPosition的情况下（即知道目标点的情况下），以偏移位置（或无偏移）为起始的动作操作。不考虑绝对位置。
+2 touchEvent可以直接在cc的层面实现。
+3 其余event？考虑到位置和UILayer关系更加密切，可以在UILayer实现。
+
+其实目前的编程有一个一开始就有的问题，Item和Menu都是无主孤儿，连一个方便使用的平台（即Layer）都没有。
+
+这使得很多逻辑的位置和发生时间混淆不清，教训！
+现在开始设计UIlaye并编程。
+思考并设计UI_Layer
+uilayer类应该具有管理和控制menu 的功能，包括如下：
+1 cameraview的重设，位置的管理，坐标系转换等。
+2 事件监听的实现，响应动画的正确安排。
+3 进入退出动画的播放和关闭。
+4 点击事件的实现，操作的监听，设置swallow。（结合1 2以及Sys_Event）
+5 对选项极多的如物品栏 dialogue等存留余地。
+1 
+这里考虑一个问题，因为所有的ui都是在ui系上出现的，所以camera的管理可以在layer层面实现而非menu
+同理zorder的覆盖也可以在其中完成。当然也有提供坐标系转换的静态方法 convert
+UI_Layer: public Layer
+{
+private:
+CCtrl* cc;
+void updatePosition(float);
+Vector<UI_Menu*> _menus;
+Map<std::string,UI_Menu*> _menus;
+Vector<UI_Menu*> _openMenu; //openMenu被addchild了，menus没有。
+void instanceOpenMenu(UI_Menu*);
+void instanceQuitMenu(UI_Menu*);
+uilayer在创建时将所有的menu装在Map中但是并不addChild只retain（），在需要使用的时候再执行addChild操作。
+类似于预加载，加载时间换运行效率。
+public:
+void openMenu(string);
+void openMenu(UI_Menu*);
+void quitMenu(string);
+void quitMenu(UI_Menu*);
+Vec2 convertUItoLayer(Vec2);
+Vec2 convertLayertoUI(Vec2);
+void update(float dt);
+bool init();
+CREATE_FUNC();
+}
+根本不用CCTRL！uilayer可以直接访问到camera！
+修改摄像机使用方法，将逻辑整合到layer中来。
+尝试删除menu的offsetposition设定，直接在uilayer层面实现。
+初步实现位置的设定，但是有些数据库里的废项没有把名字修改。
+convert操作也可以从menu中删除了。
+
+当前阶段的问题：
+1 UILayer的实现非常基础且简陋，我们还需要为其添加很多操作，还有sys如何构建
+2 需要一个H-P体系？或者Handler单例？在Sys_UI中。
+考虑到EnterAction并不会太多，其实可以单例实现，因为H-P体系还要考虑Enum等更新十分复杂。
+ok现在先考虑问题2 不考虑layer的拓展修改，来实现EnterAction QuitAction ResponseAction的设置。
+可能需要添加enum，修改csv。
+注意！EnterAnimation属于Menu，而独有的动画Enter Quit Response都属于Item的Sprite。
+添加了H-P体系，这里考虑？是否这个体系可以归于一个？
+当然会一定程度的属性受限，但是可以极大的简化操作。
+刚才在编译中出现了类未定义的问题。
+究其原因是，使用的类虽然定义了并且include了对应的头文件，但是其中的组件类没有include相应的头文件。
+实现了一个handler但是没有完善统一的handler，现在考虑用handler对MenuAction进行设置。
+在item和menu级别修改动画的设置关系并测试。
+
+UILayer尚缺几乎所有操作并且不易分辨和Sys的关系，但是可以在添加基本属性和操作来实现测试。
+
+今天成功实现了基础UIlaye类和H-P体系之下的双层动画设计，实现了Menu和Item类（除事件监听）
+明天将目标放在Layer类的完善上。

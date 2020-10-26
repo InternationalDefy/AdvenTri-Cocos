@@ -1,0 +1,7 @@
+4,//×ÜÐÐÊý
+Name,textureName,amorName,unitName(skill),animationPackName,physicsBodyName,weaponName,eventListenerName,uiID,controllerName,
+namea,rectangle_full_hp.jpg,1,u_string,Test_Pack_Amor_1,oops,w_string,Test_Set1,0,1,
+nameb,2.png,,,B_pack,1,,0,0,1,
+namec,3.png,,,C_pack,2,,0,0,1,
+TestEnemy,TestEnemy.png,TestAmor,TestUnit,TestEnemyAnimationPack,TestEnemyPhysicsBody,TestWeapon,TestEnemyListenerSet,0,,
+

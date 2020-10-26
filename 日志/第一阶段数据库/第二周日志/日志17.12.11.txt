@@ -1,0 +1,5 @@
+完成实现显示部分功能，Dialog和Emoji类加入Size属性，Clone方法和初始化操作
+
+clone是为了Variety，如果不传入新Emoji而是用emoji*会无法Variety
+
+初始化操作比较杂糅，代码复用性太差，目前尚无需优化

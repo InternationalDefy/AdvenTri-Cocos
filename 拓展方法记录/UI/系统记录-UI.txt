@@ -1,0 +1,54 @@
+HeadLine：
+
+M_UILayer：该类作为 游戏场景Scene 的组成元件，方法固定为游戏内UI，生成样式（如善恶值影响UI款式）等规则在类内init方法和update方法中定义。
+*并非主菜单等纯菜单场景Scene 可以调用用来创建UI系的类。
+
+创建方法位置：在且仅在 GameLayer的createScene方法中。
+
+M_MenuActionHandler：拥有P-H体系，用于创建MenuAction包括进场和退场，先于ActionHandler之前实现。使用了Enum的转换，可以有效避免种类不识别问题。
+
+M_UIMenu：UI的主体组成部分，由诸多UI_Item组成，拥有DB-SD体系且可以由其生成。
+
+生命周期：创建于UI层初始化->Enter函数（进入UI层）播放进入动画等->进行交互->Exit方法（暂时离开UI层）播放退出动画->销毁于UI层销毁
+
+创建方法：
+语句：M_UIMenu* Sys_UI::getInstance()->getUIMenu(name);
+位置：于UI层初始化时调用，于纯菜单场景Scene 初始化时调用。
+P-H体系：使用了MenuActionHandler生成动画。
+
+管理方法：
+实现：使用map和在map中retain，入场时addChild并执行enter函数。退场时remove，retain，并执行exit方法
+
+父子节点：
+父节点为Layer* 子节点为UI_Item
+
+M_UIItem：UI的交互实现单元，由1->n个Sprite组成，持有进出场动画，和EventListener。
+
+生命周期：完全随从于父节点M_UIMenu
+
+响应机制：
+实现：单Item由1->n个Sprite组成，响应函数的逻辑内容由M_CallbackParser实现。
+范围：responseItem为全Sprite响应，responseSprite为单个Sprite响应。
+实质：response操作仅仅播放响应动画，逻辑内容的响应由CallbackParser实现。
+
+创建方法：
+位置：在且仅在M_UIMenu的创建中。
+P-H体系：使用M_AnimationHandler生成进出场动画和响应动画。使用CallbackParser体系实现事件监听。
+
+M_Dialogue：该类实现GameLayer中对话的操作在UI层中，由组件类Page_Dialogue构成。拥有DB-SD体系
+由Page_Dialogue* 和 UIItem*组成 是逻辑实现单元，没有交互或动画的功能，但在对话框出现时要实现场景类的暂停和恢复操作。
+
+创建方法：Sys_UI::getInstance()->getDialogue(name)
+位置：在且仅在UILayer的初始化操作中。
+
+生命周期：
+创建：在GameLayer初始化对应的UILayer时，由设置的 本GameLayer所需的M_Dialogue的名字带入创建，作为非子节点 成员变量 retain在UILayer中
+交互：在调用Enter方法之后进入调用，具体的访问方法可能由各种类访问。在getLayer之后 寻找map的key实现访问。
+退出：在且仅在自身触发退出函数
+销毁：随UILayer销毁
+
+管理方法：
+与UILayer-UIMenu类似，是UILayer的子节点或非子节点retain成员变量
+
+Page_Dialogue：M_Dialogue是对话框类的逻辑实现单元，由M_LaEmoji和UIItem组成。
+UIItem固定为翻页Item，M_LaEmoji由语言系统输出。

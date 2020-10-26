@@ -1,0 +1,5 @@
+2,//总行数
+name,numberOfSkills(k),以下k个结构元:cooldown,position_name,skill_type,skill_number_of_param(m),param[1]->param[m],
+u_string,2,1,SimpleAttack,Blade,1,1,5,Dash,Dash,1,10,
+TestUnit,2,1,SimpleAttack,Blade,1,1,5,Dash,Dash,1,10,
+

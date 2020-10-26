@@ -1,0 +1,7 @@
+3,
+AnimationPackName,NumberOfKeys,key-AnimationName 1->n,
+PackageA,3,key1,AnimationA,key2,AnimationB,key3,AnimationC,
+PackageB,2,key1,AnimationF,key2,AnimationE,
+TestEnemyAnimationPack,2,angry,AnimationF,smile,AnimationE,
+
+

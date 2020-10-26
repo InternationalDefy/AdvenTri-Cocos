@@ -1,0 +1,223 @@
+划水到此为止，今天要开始着重于昨天思考之目标而实现设计。
+1 背景设计：
+背景必然分为两类，有实体的和无实体的，无实体称background，仅仅以Sprite形式出现，可以使用场景类直接定义
+有实体的是NPC类，包括破坏，事件分发，对话进入等功能在其中实现，以M_NPC形式出现，使用场景类定义其name来创建
+2 地形设计：
+（？）地形实际上是Sprite材质+逻辑函数监听的集合，可以通过以下逻辑方法实现？Terran类？通过脚本形式添加范围监听？
+一个场景需要设计一个边界值，这个边界会阻拦实体的通过，可以以PhysicsBorder的形式实现
+3 事件机制：
+利用已有的事件机制实现派发事件，使用ListenerSet进行事件派发的设计，对于每个Entity设计不同的CallbackParser
+每一个场景持有自己独有的ListenerSet
+在内存管理机制上，重写GetLayer函数，return自己。
+4 单位设置：
+一部分实体可以直接以开始时设置的形式，在场景初始化时进行设置，在需要其运行的时候打开其控制器。
+一部分体需要依靠脚本创建，故不在开始时加载素材，靠事件触发将其出现，并播放入场动作即Enter方法。
+5 类似机关和动态：
+依靠NPC类实现，但是为了区分机关类NPC和对话类NPC应该在SD中把他们分开定义。
+6 运镜及UI
+场景类必要持有cCtrl实例，运镜操作时逻辑暂停（由场景类实现）
+UI类也需要调用场景的逻辑暂停。
+7 SD定义
+目前尚不清楚具体的SD设置方法，但是
+可以毕竟肯定的是需要使用一个引用表，而其余文件则都是单文件表示一个SD因为场景类内容太多。
+8 存档系统关联
+存档系统和场景的创建初始化相关，例如存档得到善恶值来判断创建风格，可能会因为一个数值的不同创建截然不同的场景
+而且需要使用的存档系统值将不只是善恶值，可能在之前遇见的一些事会触发不同的场景设计，
+此处仅指场景设计上的不同，当然也有可能出现这种情况：同一NPC说的语言不同，而非不同的NPC，这个问题可以给NPC类以及其DialoguePack处理
+但是最好的处理方案是将 与存档系统沟通的内容 集成在 一个系统 中实现，那场景类就是最佳选项了。
+在SD？DB中需要一个脚本解析系统（该来的终究还是逃不掉了）
+9 进出以及切换方法
+需要提供其余场景类可以调用的外部接口，SplashScene的处理方案等 故一定需要一个enter quit函数作为外部接口
+而且本场景可能使用 不同的退场方式， 退至不同的场景，这些可以作为enter quit函数的参数调用
+10 特异化场景的实现
+需要一个场景管理器类，其管理场景的生成和切换，以及通过SD设置不同的UI之类的操作 
+如果出现了标志为特异场景的场景，就调用特异场景的创建方案。
+为了方便的使用各种外部接口，大致可以设计继承结构如下
+特异场景 : public 场景基类
+模式化场景 : public 场景基类
+场景基类 : public Layer
+场景管理器 : public Ref
+管理器中有如下方法
+public:
+nextScene(编号？名字？)
+中间有SplashScene的调用
+private:
+Scene* createSceneWithSpecailLayer(参数们)
+{
+SpecailLayerX::create();
+可以设置一个SpecailLayerMap?
+}
+Scene* createSceneWithUsualLayer(参数们)
+{
+Scene* createWith模式化方法
+}
+这就决定了DB一定是一个引用表，而每个场景独占单SD才是其核心部分。
+但也有可能特异化场景也需要SD设置参数，不过问题是。。。使用的是何种SD？以及SD的设置方案？
+通过以上的设计考虑，在ProcessOn上设计SceneManager为核心的数据层级结构
+
+完成了层级结构的设计，主要方法应该标注一些，但那是睡起来以后的事了。。。
+主要类方法
+-Sys_Save
+
+-Sys_Scene
+private:
+DB_Scene* _db;
+DB_SplashScene* _dbs;
+M_SceneScriptParser* _parser;
+Sys_Save* _save;
+Sys_UI* _ui;
+DB_Scene*&SD_Scene包含的是有脚本在其中的SD，经过解析之后变成另一个类返回，即 NSSD_Scene*无脚本SD
+DB_SplashScene*同理
+private:
+Scene* createSceneWithSD(NSSD_Scene*) 
+{Scene* sc=Scene::create();NSSD->getType()? gamelayer=createSpecialLayer(NSSD)?gamelayer=createLayerWithSD(NSSD);
+uilayer=getUILayer(NSSD_Scene*);addChidl(gamelayer);addChild(uilayer);}
+M_GameLayerCommon* createLayerWithSD(NSSD)
+{return GamerLayerCommon::create(SD);}
+M_GameLayerSpecial* createSpecialLayer(NSSD)
+{return XXXSpecialLayer::craete(SD);}
+UI_Layer* getUILayer(NSSD_Scene*)
+{return UI_Layer::reate(SD);}
+Sys_Scene* create();
+bool init();
+public:
+Sys_Scene* getInstance();
+void nextScene(const std::string& name)
+{SplashScene::createWithNextLayer(name);}
+当SplashScene进入后，在OnEnter方法中调用getScene()
+Scene* getScene(const std::string& name);
+{getSD;_parser->parse(SD);createSceneWithSD;}
+
+-M_GameLayerBase
+public Layer
+private:
+bool _isPaused;
+cCtrl* cameraCtrl;
+Node*(WithPhysics) Border;
+Node*(WithPhysics) cameraBorder;
+UI_Layer* ui;
+ListenerSet*(以Parsers和Dispatcher作为子节点形式出现)
+LaEmojiPack*(即以浮动字形式出现的LaEmoji的预载，其运行可以被设为到何时自动移除，通常只有一页)
+public:
+update(float){_children->update(dt);}
+Scene* createScene(NSSD);
+bool init(NSSD);
+void pauseUpdate(bool);
+void pausePhysics(bool);
+void pauseLayer(bool);
+
+-M_SceneScriptParser
+此类的实现依赖于Sys_Save;
+public:Ref
+void NSSD_Scene* parseSDScene(SD_Scene*);
+void NSSD_SceneSplash* parseSDSceneSplash(SD_SceneSplash*);
+?void NSSD_UILayer* parserSDUILayer(SD_UILayer*);
+？不确定上句是不是需要，因为它可以被SD_Scene定义，经转换成为NSSD_Scene由Sys_Scene使用
+*****************
+以上为24日日志
+*****************
+依照上述的设计，今天先开始实现SD_Scene*和NSSD_Scene*构建数据库体系，
+1 毫无疑问要使用数据库的很多方法，但是又不能够直接继承DB类，所以要考虑一些修改。
+2 数据需要设计 困了，先睡了。
+3 脚本的设计方案
+3 用？标号开启脚本编辑，以est,作为脚本的结束。
+例如 
+NSSD中定义NPC[i]
+name[i],position[i],enterInstance[i],
+SD（带脚本）中定义NPC[i]
+
+关于自己脚本系统的一些想法：
+1 脚本系统要具有通用性，可以在程序的任何一个模块使用
+解决方案：将脚本解析建立在字符串的容器上，这样其需要处理的内容是且只是字符串，而需要使用其时，传入的参数是且只是字符串
+
+2 脚本要具有错误排查功能
+3 脚本的每个语句要具有明确且单一的功能
+
+4 脚本类型可以分为执行型脚本和判断型脚本
+执行型 通过语句解析执行一系列由数据驱动 且可以判断当前形式做出选择的行为 
+判断型 通过判断确定某一个类型的X变量值（X变量的名字不重要，因为该脚本返回值作为赋值语句右值出现） 通常出现在数据库的完善中
+?脚本：判断型脚本
+!脚本：执行型脚本
+5 脚本语句可以分为（种类：判断方法：说明）
+开始：
+开始语句为一个脚本开始的第一句。
+开始语句标明了当前脚本类型和执行类型/返回值类型。
+开始语句不入栈，其意被解析后用于分派函数。
+!attack,?bool,
+执行：
+执行语句为一个脚本段开始的第一句且非est。
+执行语句是最终结果，其后语句段 直至回溯语句 是其条件判断。
+执行语句即执行型脚本中的 待执行操作，判断型脚本中的 可选判断结果。
+执行语句位于栈底。
+1,name,posX,posY,
+回溯：
+回溯语句是一个脚本段结束的最后一句且非est。
+回溯语句自身操作的含义 只能 在其前第一个执行语句后的脚本段中 寻找。
+回溯语句通常是判断符号如 <>!= 等 在其前脚本段中 左值在先。
+回溯语句不入栈，遇到其解析所有脚本至栈空。
+>,=,<,!,est,
+	结束：
+	结束语句是一种回溯语句，为est。（End ScripT）
+	结束语句与回溯语句同样具有 结束脚本段 和 出栈调用 的功能，但不同的是est不仅结束脚本段，还会结束当前脚本。
+	est,
+栈：
+栈语句是 非开始 非回溯 非执行 非结束 语句外的其余脚本语句。
+栈语句的含义，即指该类语句通常不立即解析执行，而是进入脚本解析器的栈中，在回溯语句解析时才调出栈使用。
+1,name,getPlayer,
+	回调：
+	回调语句是栈语句的一种，表示一个函数回调。
+	回调语句不同于回溯语句，其需要访问之前的脚本段，但是通常只访问前1-2个作为参数，不会一直到执行语句。
+	getSave,
+	参数：
+	参数语句是栈语句的一种，其作为回调语句的参数出现。
+	参数语句绝对不自身参与解析，在且只在回调语句访问时将其作为参数使用。
+	int,bool,string,
+	截断：
+	截断语句是栈语句的一种，其在回溯语句回调出栈时用来标记界限。
+	截断语句就是普通的栈语句加上前缀.，表示一个阶段的回溯到此进行一次截断返回值。
+	当遇到有参数的回调语句时，截断符号在回调语句非其前的参数语句上加。
+	.getSave,.3,
+6 脚本间可以相互嵌套
+事实上，脚本嵌套在逻辑上并不复杂，一个无嵌套脚本的值在 当前情况确定时 是可以确定的。
+而一个有嵌套脚本可以在遇到其子脚本时立即解析子脚本，得到其确定值之后再继续执行解析。
+问题在于这样多解析器对脚本单例模式的冲击，这样无疑不能够使用单例模式，需要在内存管理上下功夫了。
+
+7 脚本的执行（? 程序 ? 模块）
+开始：设置脚本类型，并通过返回值类型判断选择不同的返回值处理函数。
+主体循环，对所有脚本进行循环访问，对每个脚本进行访问时，先执行判断函数：
+（栈空）执行语句：入栈，
+栈语句：入栈，
+回溯语句：设置回溯符号，开始出栈操作，
+出栈操作：栈语句出栈，回调语句出栈并相应的执行，其中包括正误检测
+到第一个截止语句返回右值，
+到第二个截止语句返回左值，
+通过左右值以及回溯语句得出判断结果
+用判断结果决定是否运行执行语句&返回脚本
+
+一个示例：
+exist[q],name[q],position[q],
+?bool(enterInstance[q]),
+?bool,PlayerHp,getPlayer,3,<,1,0,est,
+PlayerLevel,int,getSave,3,<,
+0,est,
+?bool 
+开启脚本 以获取bool类型变量值，		/*脚本返回的变量即该位置对应的enterInstance[q]，类型是bool（1/0），设此脚本名为脚本1*/
+?bool
+设置enterInstance[q]值为如果	 开启脚本 以获取bool类型变量值，	
+/*在某一条件下，给enterInstance[q]的设置值 将是另一个条件判断脚本的返回值，为说明方便，设此值名为0xcdcdcdcd*，设此脚本名为脚本250/
+开始语句，
+1,			.getHp,		getPlayer,		.3,	<,		0,			est,
+设置0xcdcdcdcd为1如果，	获取Hp变量，	获取于getPlayer，	3，	获取量小于其，	设置0xcdcdcdcd为0如果,	在其他情况下&&脚本结束,
+执行语句，		截断语句，	栈语句，		截断语句，回溯语句，	执行语句，		结束语句，
+PlayerLevel,	int,	.getSave,		.3,	<,		/*int，PlayerLevel实质上作为getSave操作的参数*/
+PlayerLevel变量 ，	int类型，	获取于Save系统中，	.3，	如获取量小于其，	/*该设置值即脚本250获取的值名为0xcdcdcdcd*/
+参数语句，	参数语句，回调语句&截断语句，截断语句，回溯语句，
+0,			est,
+设置enterInstance[q]为0，	在其他情况下&&脚本结束
+执行语句，		结束语句，
+
+先尝试这样的脚本能否实现。考虑到这样的逻辑很混乱。。。
+完全重写脚本系统！
+用字节码模式的范例。
+
+不好，似乎字节码模式的范例解析器只能提供参考，不能成功实现任务。所以。。。换用自己的解决方案

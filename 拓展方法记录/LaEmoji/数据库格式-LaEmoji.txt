@@ -1,0 +1,6 @@
+Table_Emoji.csv Table_Dialoge.csv Table_LaEmojiPack.csv 不解释没意义
+Table_LaEmoji.csv
+其余记录比较齐全，这里主要记录动作和参数
+string Name,int m,string[m] params[m]
+,1,Time,
+FadeIn,1,time,

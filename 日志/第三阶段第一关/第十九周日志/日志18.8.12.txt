@@ -1,0 +1,302 @@
+在两个月慌得一笔的停工之后，
+无事可做产生的空洞和虚无是自卑的一大根源，也是未来的一大毒瘤。现在我们得以回归编程，这很幸福，很踏实。
+蹬三轮很有趣。
+尝试网络传达意思的想法很美好。
+终究还是靠面对面才能传达正确意思。
+现在开始努力工作！
+
+进行了一些设计考量，需要对当前体系进行修改。
+
+*编程实现实体距离投影，单方向
+决定：
+1 投影的实现方案：
+A 移动：追随实体而移动
+B 背景距离：预处理设置，由当前场景类固定距离
+C 形状：平行光投影，同样图形，调整黑色变暗，边缘模糊
+D 平行光束方向：场景设置光方向
+2 投影的编码位置：实体类加入场景时
+
+*细节效果动画，单元素编程实现动画
+决定：
+实现方案：使用DB-SD体系，和P-H体系的模板拓展
+实现位置：使用之前的类进行修改，即ActionHandler体系修改
+
+考虑之前的进度，
+5.31的进度：实现了场景类的创建方案和存档系统的结合，但是数据设置需要材质的加入。
+先实现单元素编程实现动画。
+目前忽视场景类，使用测试类进行继续。
+等素材到来之后进行实体距离投影的统一实现。
+
+目前屏蔽了场景类的测试代码，使用测试类继续完善单素材动画。
+考量ActionParser类的体系和用法。
+ActionParser没有DB-SD体系，无数据库单例，直接使用Vector<>对其进行调用。
+
+P-H体系可以很耐用。
+要修改应该从DB_Animation下手。
+经过一番考虑之后，Animation和Animate绝对是要分开处理的。
+之前所实现的类AnimationPack和DB_Animation应该改名为DB_Animate，其所实现的是对逐帧动画的处理。
+DB_Animation体系将作为动作存在，创建一个动作需要对动画进行复制和Get？还是使用动画的Api而调用？
+用名称进行复制和get，效率更高，AnimationPack需要存储的是Animation的名字，Animation包括固定的Animate，用名字在DB_Animte里访问，
+DB_Aniamte作为单利出现，只存储Animate，
+Animatron则是在使用时及预处理载入时生成，生成需要一个对应的Node以及其他参数。
+
+修改思路：
+AnimationPack：改名M_AnimationPack，key-FiniteTimeAction*，用DB_AnimationPack-SD_AnimationPack创建，
+DB_Animation：改名DB_Animate，文件改名为DB_Animate，为name-Animate*
+新类：
+SD_AnimationPack：存储的是Pack的信息，
+DB_Animation：存储每个Animation，形式为名字-SD对应
+SD_Animation：单个Animation的信息，为一个用来表示其参数的SD，SD中可以有Animate的名字在DB_Animate中找寻所需的单动画要素。
+具体的SD形式：name,type,numberOfParams,Param1->n
+Action单例的P-H体系：
+DB_Animation.csv->DB_Animate.csv
+在ProcessOn上标注了当前的体系，开始动工修改。
+
+问题1：有一部分调用了Animate（原Animation）的接口
+使用接口的是测试类和护甲类和主角类，目前视为调取逐帧动画，在真·Animation类完成之后将其修改回来。
+问题2：有一部分程序使用了HitAnimationPack
+目前需要删除HitAnimationPack的使用。
+
+添加新类：DB_Animation
+SD_Animation
+DB_AnimationPack的修改：应该存SD_AnimationPack，M_AnimationPack作为创建时使用的实例，问题是Action可以复制？但Action需要结合Node*和具体参数使用。所以。
+改！
+改为M_AnimationPack实体创建时创建。SD_AnimationPack仅作为数据存储。
+
+SD_AnimationPack需要的数据：
+n(numberOfAnimation) Key-ANimationName Nope!这只需要一个Item就行了？Yeah!
+
+添加了新类SD_AnimationPack 
+尚需修改：AnimationPack类的DB体系，M_AnimationPack的多处调用。
+有想法删除Amor类。。。可以把它作为数据类？非完整行为的类？
+如果需要完整行为，把它归于实体或许可以行得通？
+AnimationPack类的各处调用先屏蔽掉。在新的类完成之后，在实体类中统一实现？
+旮旯拐角记录：
+EPP_PlayerBodyOnEnemy有对HitAnimation调用
+Sys_UI对AnimationPack的调用屏蔽
+M_Amor
+DB_Ebreecd
+SD_Ebreed
+
+今天完成了对Animation的初步剥离。明天可以大刀阔斧的修改了。。。
+
+*******************
+以上为8月5日日志
+*******************
+
+今天考虑实体阴影的实现。
+
+*编程实现实体距离投影，单方向
+决定：
+1 投影的实现方案：
+A 移动：追随实体而移动
+B 背景距离：预处理设置，由当前场景类固定距离
+C 形状：平行光投影，同样图形，调整黑色变暗，边缘模糊
+D 平行光束方向：场景设置光方向
+2 投影的编码位置：实体类加入场景时
+
+投影需要新类吗？
+目前看来不需要，因为没有投影和实体的互动。
+投影作为实体类的成员变量以及子节点出现，实体类可以选择是否使用投影的Bool型来设置。
+投影类的update函数跟随其父节点（实体）localZOrder为 -1
+投影的 背景距离 方向 由场景设定，在实体添加进场景的时候判断是否添加投影，
+编码位置是实体加入前，修改场景类的DB，来实现实体阴影的设置。
+类的修改
+
+SD_GameLayer 
++ Vec2(LightDirection)
++ 1->n(Entitys Number)
+bool enableShadow(n)
+float shadowDepth(n)
+
+M_GameLayer
++ Vec2(LightDirection)
+
+M_Entity
++ bool _enableShadow
++ Sprite* _shadowSprite
++ Sprite* getShadow()
++ void setShadow(Vec2 LightDirection,float depth)
+
+*******************
+以上为8月9日日志
+*******************
+实体类的方法进行扩展，再考虑场景类的修改。
+
+现在的问题：
+虽然rotation能够跟随实体进行变换，但是相对位置也会随着实体旋转，这不符合光照的效果
+也许需要一个Shadow类专门实现阴影效果的旋转，这样，Shadow类还需要考虑到和其他效果的互动。
+所以需要谨慎处理。
+重新添加M_Shadow类，持有父节点为Entity类
+
+明白了根本原因，是EntityRotation对PositionOff的修正
+无法在不修改引擎和大框架的情况下删除该cascade，将shadow作为layer的子节点添加，
+在ENtity的remove方法里设置其remove
+
+需要学习shaders来实现基本的模糊效果。
+果然是逃不掉的。。。明天学习吧。
+
+*******************
+以上为8月10日日志
+*******************
+今天现在垃圾baidu上学习了一些基本的概念，再考虑用demo研究shaders的用法
+
+.fsh.vsh文件作为shaders的渲染程序，被游戏引擎以GLProgramState设置并传递参数，
+由GLProgram类实现访问，Effect的实现是将像素点传送至GLProgram类，
+GLProgram类封装了一个GL程序，其类访问.vsh.fsh文件来实现渲染。
+渲染程序不关心外界状况，是单独对一个像素点颜色的修改。
+
+通过以下步骤，可以在几乎没有封装的情况下添加模糊效果
+1.在Sprite初始化阶段：材质初始化之后添加GL程序，此程序固定为Blur.fsh
+	GLchar * fragSource = nullptr;
+	fragSource = (GLchar*) String::createWithContentsOfFile(
+
+                 		FileUtils::getInstance()->fullPathForFilename("Shaders/example_Blur.fsh").c_str())->getCString();
+	auto program = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource);
+
+	auto glProgramState = GLProgramState::getOrCreateWithGLProgram(program);
+
+	auto size = getTexture()->getContentSizeInPixels();
+	getGLProgramState()->setUniformVec2("resolution", size);
+	getGLProgramState()->setUniformFloat("blurRadius", _blurRadius);
+	getGLProgramState()->setUniformFloat("sampleNum", 7.0f);
+2.似乎不需要添加别的。。。
+此方法可以为程序在初始化时添加一个GLProgram，但是限定只能添加一个blur的程序。且不能切换效果。
+virtual void setTarget(EffectSprite *sprite){}
+通过以下步骤，可以在封装了数据的情况下添加模糊渲染。
+1.加入新类：Effect作为所有Effect的父类
+public:
+	cocos2d::GLProgramState* getGLProgramState() const { return _glprogramstate; }
+	virtual void setTarget(EffectSprite *sprite){}
+	//实际上为Sprite添加效果的操作。由子类实现。
+protected:
+	bool initGLProgramState(const std::string& fragmentFilename)
+	{
+	auto fileUtiles = FileUtils::getInstance();
+    
+	auto fragmentFullPath = fileUtiles->fullPathForFilename(fragmentFilename);
+    
+	auto fragSource = fileUtiles->getStringFromFile(fragmentFullPath);
+    
+	auto glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+    
+	
+	_glprogramstate = GLProgramState::getOrCreateWithGLProgram(glprogram);
+    
+	_glprogramstate->retain();
+
+    
+	return _glprogramstate != nullptr;
+	}
+	Effect();
+	virtual ~Effect();
+	//注意因为_glprogramstate并非节点， 所以需要在构造函数和析构函数里处理其
+	cocos2d::GLProgramState* _glprogramstate;
+2.加入新类：EffectSprite作为Effect使用的对象
+public:
+	static EffectSprite* create(const std::String& filename)
+	void setEffect(Effect*)
+	{
+		if(_defaultEffect != effect)
+		 {
+         
+			effect->setTarget(this);
+
+            
+			CC_SAFE_RELEASE(_defaultEffect);
+           
+			_defaultEffect = effect;
+            
+			CC_SAFE_RETAIN(_defaultEffect);
+
+            
+			setGLProgramState(_defaultEffect->getGLProgramState());
+		}
+	}
+//单Effect处理函数，以_default作为Effect使用，添加时注意Retain
+	void addEffect(Effect* effect,ssize_t order)
+	{
+		effect->retain();
+		effect->setTarget(this);
+
+		_effects.push_back(std::make_tuple(order,effect,QuadCommand()));
+		std::sort(std::begin(_effects), std::end(_effects), tuple_sort);
+	}
+//多Effect用有序容器来实现，所以注意析构函数里对容器的释放
+protected:
+	std::vector<std::tuple<ssize_t,Effect*,QuadCommand>> _effects;
+
+	Effect* _defaultEffect;
+	EffectSprite() : _defaultEffect(nullptr)
+   
+	 {
+
+		effects.reserve(2);
+    	
+	}
+    
+	~EffectSprite() 
+	{
+        
+		for(auto &tuple : _effects) 
+		{
+            
+			std::get<1>(tuple)->release();
+        
+		}
+  
+		CC_SAFE_RELEASE(_defaultEffect);
+    
+	}
+
+3.在Effect的派生类中，调用不同的shaders文件来初始化不同的Effect，且用setTarget的override来实现参数的设置
+以EffectBlur为例
+
+bool EffectBlur::init(float blurRadius, float sampleNum)
+
+{
+
+	initGLProgramState("Shaders/example_Blur.fsh");
+
+	_blurRadius = blurRadius;
+   
+	_blurSampleNum = sampleNum;
+    
+    
+	return true;
+
+}
+
+void EffectBlur::setTarget(EffectSprite *sprite)
+
+{
+    
+	Size size = sprite->getTexture()->getContentSizeInPixels();
+    
+	_glprogramstate->setUniformVec2("resolution", size);
+
+	_glprogramstate->setUniformFloat("blurRadius", _blurRadius);
+    
+	_glprogramstate->setUniformFloat("sampleNum", _blurSampleNum);
+
+}
+
+
+此方法将渲染效果以Effect的形式封装，这样可以把Sprite与Shaders的耦合操作剥离开，对于效果的复用和切换有大有作为。
+
+*******************
+以上为8月11日日志
+*******************
+今天的目的是实现EffectBlur，将Entity实现拓展，为其添加可以渲染的效果。
+不行，需要重写Sprite类？
+虚继承实现！
+先实现一个EffectSprite类，其可以添加效果。
+Entity:virtual public Sprite,public EffectSprite
+父类没有被发现，现在只能把EffectSprite的.h文件写入Entity.h中，需要注意这是一个大坑，以后可能会因此导致头文件相互包含。
+尝试把EffectSprite单独分离/
+
+单独分离成功，现在考虑shaders的路径访问。
+暂时使用cpp-test里的blurshader作为案例使用。
+blur文件找不到。。。要放在Resource中才行。
+
+fragSource编译的是源代码，非文件名，所以需要找到源代码才行。

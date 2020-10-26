@@ -1,0 +1,13 @@
+3,//×ÜÐÐÊý
+Name,textureName,
+LanguagePackName,animationPackName,physicsBodyName,eventListenerName,uiName,controllerName,
+int numberOfVulnerable,Vulnerables,
+namea,1.png,
+,u_string,AnimationPack,oops,,,,
+1,Fire,
+nameb,2.png,
+LaEmojiPack2,2_string,AnimationPack,oops,listenerSetN,,Test_Controller,
+1,Fire,
+namec,3.png,
+LaEmojiPack3,u_string,AnimationPack,oops,listenerSetN,,Test_Controller,
+1,Fire,

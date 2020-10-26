@@ -1,0 +1,2 @@
+因为控制器数目终究有限，所以不同类型的控制器应当各有自己的实例，并且将存储于ControllerSystem的Vector中
+在ControllerSystem初始化时完成上述操作

@@ -1,0 +1,13 @@
+Sys_LaEmoji 管理类，持有四个数据库和 ActionHandler管理类。拥有创建和初始化LaEmoji，PageLaEmoji的方法。
+
+M_LaEmoji 聚合类，由M_Dialoge，Page_LaEmoji实例聚合而成，该类本身有自身属性和一些管理 翻页 动画 内存管理等的 函数，为M_Dialoge和Page_LaEmoji的父节点，且以Vector形式持有 所有Page_LaEmoji的实例，包括激活的和未激活的。事件监听操作由和 UIItem关联 组成 M_Dialogue类实现。
+Page_LaEmoji 组合类，由Vector<M_Emoji*> 作为核心，其方法仅用来管理这个容器。Page_LaEmoji无M_Dialoge*实例。创建后被addChild作为M_LaEmoji的子节点，所以没有显示，因为被设置了invisible。
+
+M_Emoji，M_Dialoge 组件类，表情包和对话框，主体是Sprite，在每个LaEmoji创建时 按不同的DB 和参数 生成不同的实例。
+
+M_LaEmojiPack 与M_AnimationPack不同，实际上只是 map<string,string>的一个 封装， 存储的是类似 POP语言 等 单页LaEmoji。单页 M_LaEmoji 用于表达效果，也可以使用于对话过程中，由UI_Dialogue 发送信息来获取 M_LaEmoji。
+
+M_EmojiActionHandler 拥有P-H体系，用来处理M_LaEmoji的激活操作的动画，注意生成的动画是即时动作（即无时间）。且一定需要setvisible因为默认invisible
+派生类记录：
+M_EEP_Default 默认方法（闪现）
+M_EEP_FadeIn 

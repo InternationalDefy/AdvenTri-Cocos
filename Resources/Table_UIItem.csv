@@ -1,0 +1,18 @@
+5,
+Line 1:		name,ListenerSetName,type,numberOfSprites(n)
+Line 2->n+1:	textureName[i],AnimationPack[i],OffsetPosition
+Test_DiaCtrlItem_1,Test_DiaCtrlListenerSet_1,DiaCtrl,1,
+d3.png,Test_DiaCtrlItem_1,0,0,
+Test_LaCtrlItem_1,LaCtrlListenerSet_Left,LaCtrl,1,
+d3.png,Test_LaCtrlItem_1,0,0,
+Test_LaCtrlItem_2,LaCtrlListenerSet_Right,LaCtrl,1,
+d3.png,Test_LaCtrlItem_2,0,0,
+Test_UIItem_1,Test_UI_Item_ListenerSet_1,LifeStone,6,
+1.png,Test_UI_Pack_1,-50,0,
+1.png,Test_UI_Pack_1,-30,0,
+1.png,Test_UI_Pack_1,-10,0,
+1.png,Test_UI_Pack_1,10,0,
+1.png,Test_UI_Pack_1,30,0,
+1.png,Test_UI_Pack_1,50,0,
+Test_UIItem_2,Set_None,LoadingBar,1,
+1.png,Test_UI_Pack_2,0,0,

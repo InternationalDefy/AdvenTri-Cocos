@@ -1,0 +1,8 @@
+6,//
+name,EventParamTypeName,Param
+Test_MouseOnDiaCtrl,string,this,
+Test_MouseOnLaCtrlLeft,string,this,
+Test_MouseOnLaCtrlRight,string,this,
+Test_Event1,string,Hey there!
+Test_Event2,string,Hey here!
+Test_MouseOnUI_1,string,this,

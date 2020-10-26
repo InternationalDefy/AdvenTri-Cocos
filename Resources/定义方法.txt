@@ -1,0 +1,64 @@
+PieceOfPhysicsBody(TestPhysics).csv
+1
+int n,int item,float velocitylimit,float lineardamping,float angularlimit,float angulardamping,bool dynamic,
+2->n+1
+int shape[i](id),float side x[i],float side y[i],
+
+PieceOfPhysicsShape(TestShape).csv
+1
+int tag,float density,float friction,float restitution,int categoryMask,int collisionMask,int contactTestMask,string typename,int numberOfVetrex(n)
+2->n+1
+float vetrex[i].x,float vetrex[i].y
+
+PieceOfLaEmoji(TestLaEmoji).csv
+1
+int type,int numberOfLaEmoji(n),int numberOfItem(m),
+2
+string dialogNmae,float dialogSize.x, float dialogSize.y,int borderWidth,int blockSpace,int lineSpace,
+3->n+2
+string name[i],float adjustSize[i],float delayTime,
+
+Controller类尚未完善所有方法，需要在Entity类和breed类完成之后加以定义。
+
+PieceOfAnimation(TestAnimation).csv
+1
+int n,int m(m=1),float delayunit,int loop(number loops -1 means infinite),float delayloop,
+2->n+1
+string pictureName[i]
+
+E_BreedList
+(not a piece of?)
+1
+int n,
+2->n+1
+int id[i],string textureName[i],int amor_type_id[i],int unit_type_id[i]（其决定了skills，并且skills在其中定义）,int animation_collection_id[i],
+int physics_body_id[i],int weapon_type_id[i],int event_listener_id[i],int ui_collection_id[i],int controller_id[i],
+//这些属性可以在之前的组件类里设置！float move_speed[i],int attack_speed[i],int defence[i],int health[i],int reload_time[i]
+
+WeaponList
+1
+int n,
+2->n+1
+string weapon_type_Name[i] 仅用于方便标识,int id[i],int physics_body_id[i],string textureName[i],int brokenanimationid[i],int type[i],int damage_type[i],float damage_chance[i],int damage[i],float attack_delay[i],float range[i],
+typeRef:		1:sword 	2:spear 	3:bow 	4:staff 
+damageTypeRef:	1:physics	2:ap	3:fire	4:frost	5:blood	6:posion
+
+AmorList
+1
+int n,
+2->n+1
+string amor_type_Name[i] 仅用于方便标识,int id[i],string textureName[i],int half_broken_animationID,int total_broken_animationID,float defence[i],int hp[i],int type[i]
+typeRef:		1:paper	2:wood	3:iron	4:magic
+
+UnitList
+1
+int n,
+2->n+1
+string unit_type_Name[i],仅用于方便标识,int id[i],int number_of_skills[i](k),以下k个结构元：int skill_id[i][j] int number_param_skill[i][j](m) if (m!=0) int param_of_skill[i][j][k],...
+
+AnimationPack
+1
+int n,
+2->n+1
+string animation_pack_Name[i],仅用于方便标识,int id[i],int number_of_animations[i](k)（也许k是固定的？）,以下1->k个item:int animation_id[i][j],
+目前不清楚k应当是常数或是变数，但是可以确定的是，k可以以（！=0）形式确定是否存在某一位animation，毕竟不是所有的entity都会访问所有type的animation

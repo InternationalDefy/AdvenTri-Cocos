@@ -1,0 +1,37 @@
+create函数加上了对entity添加的动作，不过并没有完全实现
+以ControllerSimple为例开始构建Controller类
+遗留问题
+1.应当是从Entity到Controller的添加动作（I）
+2.更新尚未实现（S）
+3.尚未实现内存管理（D）
+4.类型转换还需考虑（可能需要再一个EntitySystem）（D）
+
+承接上回，
+3.更新现已实现
+4.类型转换甚至更加混乱了。。。Action也ran了进去，（D）
+待改处很多，先吃晚饭
+
+承接上&上上回，
+目前的内存管理和类型转换预在EntitySystem中实现
+同时重画UML图，System的关系现在比较明朗
+
+现在开始尝试Entity到Controller的动作实现
+
+类型转换的问题已经极端混乱了，需要重新规划。
+
+冷静分析事态之后，准备重新开始Entity和Controller的构建
+
+Entity将使用统一的类型，使用类型对象模式和组件模式，其包含一个表示自身类型的对象
+加入Breed类：表示对象类型，用于Controller的调用
+
+Controller和Entity是双向包含的，操作Entity的行为在Controller中
+
+将Controller派生类功能简化，只重写虚函数，不知道能否通过
+
+实现！内存管理和派生类皆以实现
+
+Entity单类使用 Controller派生类配合虚函数表使用
+
+Entity预添加Entity* _enemy以实现行为函数，或者多一些static private函数进行调用
+Entiy预使用类型对象模式，那就要添加更多的参数表，明天的Entity数据类型就要多加注意了。
+ControllerSimple仅仅是测试类或者简单类，以后还要加以扩展，但目前而言，其拓展和维护已经实现。

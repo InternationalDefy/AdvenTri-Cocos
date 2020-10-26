@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
+    <RootNamespace>test_win32</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration).win32\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration).win32\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <CustomBuildStep>
+      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
+      </Command>
+      <Outputs>$(TargetName).cab</Outputs>
+      <Inputs>$(TargetFileName)</Inputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</BrowseInformation>
+    </ClCompile>
+    <Bscmake>
+      <PreserveSbr Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libcurl_imp.lib;websockets.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\Ctrl_MenuRandom.cpp" />
+    <ClCompile Include="..\Classes\DB_Animation.cpp" />
+    <ClCompile Include="..\Classes\DB_Dialog.cpp" />
+    <ClCompile Include="..\Classes\DB_Dialogue.cpp" />
+    <ClCompile Include="..\Classes\DB_Emoji.cpp" />
+    <ClCompile Include="..\Classes\DB_GameLayer.cpp" />
+    <ClCompile Include="..\Classes\DB_LaEmojiPack.cpp" />
+    <ClCompile Include="..\Classes\DB_Npc.cpp" />
+    <ClCompile Include="..\Classes\DB_Scene.cpp" />
+    <ClCompile Include="..\Classes\DB_SplashLayer.cpp" />
+    <ClCompile Include="..\Classes\DB_UI_Item.cpp" />
+    <ClCompile Include="..\Classes\DB_UI_Menu.cpp" />
+    <ClCompile Include="..\Classes\DCCP_DialogueEnd.cpp" />
+    <ClCompile Include="..\Classes\DCCP_LaCtrlLeft.cpp" />
+    <ClCompile Include="..\Classes\DCCP_LaCtrlRight.cpp" />
+    <ClCompile Include="..\Classes\DP_LeftClickOnUIItem.cpp" />
+    <ClCompile Include="..\Classes\MAP_Animate.cpp" />
+    <ClCompile Include="..\Classes\MAP_EntityBlast.cpp" />
+    <ClCompile Include="..\Classes\MAP_EnvirBlast.cpp" />
+    <ClCompile Include="..\Classes\MAP_FadeIn.cpp" />
+    <ClCompile Include="..\Classes\MAP_FadeOut.cpp" />
+    <ClCompile Include="..\Classes\MEAP_FadeIn.cpp" />
+    <ClCompile Include="..\Classes\MEAP_Force.cpp" />
+    <ClCompile Include="..\Classes\ME_Blur.cpp" />
+    <ClCompile Include="..\Classes\M_ActionParser.cpp" />
+    <ClCompile Include="..\Classes\M_Dialogue.cpp" />
+    <ClCompile Include="..\Classes\M_EEP_Default.cpp" />
+    <ClCompile Include="..\Classes\M_EEP_FadeIn.cpp" />
+    <ClCompile Include="..\Classes\M_Effect.cpp" />
+    <ClCompile Include="..\Classes\M_EffectSprite.cpp" />
+    <ClCompile Include="..\Classes\M_EmojiActionParser.cpp" />
+    <ClCompile Include="..\Classes\M_EmojiActionHandler.cpp" />
+    <ClCompile Include="..\Classes\M_GameLayerCommon.cpp" />
+    <ClCompile Include="..\Classes\M_MenuAnimationHandler.cpp" />
+    <ClCompile Include="..\Classes\M_FEP_Blast.cpp" />
+    <ClCompile Include="..\Classes\ISUP_RestoreMp.cpp" />
+    <ClCompile Include="..\Classes\DB_callback.cpp" />
+    <ClCompile Include="..\Classes\DB_dispatcher.cpp" />
+    <ClCompile Include="..\Classes\DB_event.cpp" />
+    <ClCompile Include="..\Classes\DB_ItemEntity.cpp" />
+    <ClCompile Include="..\Classes\DB_ItemState.cpp" />
+    <ClCompile Include="..\Classes\DB_listenerSet.cpp" />
+    <ClCompile Include="..\Classes\DB_pCtrl.cpp" />
+    <ClCompile Include="..\Classes\ES_Dash.cpp" />
+    <ClCompile Include="..\Classes\ES_Standred.cpp" />
+    <ClCompile Include="..\Classes\ISDP_Flying.cpp" />
+    <ClCompile Include="..\Classes\M_callbackParser.cpp" />
+    <ClCompile Include="..\Classes\Ctrl_Camera.cpp" />
+    <ClCompile Include="..\Classes\DP_positionWithin.cpp" />
+    <ClCompile Include="..\Classes\M_dispatchHandler.cpp" />
+    <ClCompile Include="..\Classes\M_dispatchParser.cpp" />
+    <ClCompile Include="..\Classes\M_EDash.cpp" />
+    <ClCompile Include="..\Classes\M_EnemyActivity.cpp" />
+    <ClCompile Include="..\Classes\M_EnemyDebuff.cpp" />
+    <ClCompile Include="..\Classes\M_EnemyState.cpp" />
+    <ClCompile Include="..\Classes\M_eventParserPhysics.cpp" />
+    <ClCompile Include="..\Classes\M_LaEmojiPack.cpp" />
+    <ClCompile Include="..\Classes\M_MenuAnimationParser.cpp" />
+    <ClCompile Include="..\Classes\M_Npc.cpp" />
+    <ClCompile Include="..\Classes\Ctrl_Player.cpp" />
+    <ClCompile Include="..\Classes\M_eventHandlerPhysics.cpp" />
+    <ClCompile Include="..\Classes\M_PlayerActivity.cpp" />
+    <ClCompile Include="..\Classes\M_PlayerDebuff.cpp" />
+    <ClCompile Include="..\Classes\M_PlayerState.cpp" />
+    <ClCompile Include="..\Classes\M_pSkill.cpp" />
+    <ClCompile Include="..\Classes\M_PS_atk.cpp" />
+    <ClCompile Include="..\Classes\M_PS_dash.cpp" />
+    <ClCompile Include="..\Classes\M_PS_spk.cpp" />
+    <ClCompile Include="..\Classes\EPP_playerBodyOnEnemy.cpp" />
+    <ClCompile Include="..\Classes\M_ScriptParser.cpp" />
+    <ClCompile Include="..\Classes\M_ScriptParserJudge.cpp" />
+    <ClCompile Include="..\Classes\M_SplashLayer.cpp" />
+    <ClCompile Include="..\Classes\M_UI_Item.cpp" />
+    <ClCompile Include="..\Classes\M_UI_Layer.cpp" />
+    <ClCompile Include="..\Classes\M_UI_Menu.cpp" />
+    <ClCompile Include="..\Classes\PS_Dash.cpp" />
+    <ClCompile Include="..\Classes\PS_Standred.cpp" />
+    <ClCompile Include="..\Classes\Ref2PlayerState.h" />
+    <ClCompile Include="..\Classes\Ref_Effect.h" />
+    <ClCompile Include="..\Classes\SD_Animation.cpp" />
+    <ClCompile Include="..\Classes\SD_AnimationPack.cpp" />
+    <ClCompile Include="..\Classes\SD_callback.cpp" />
+    <ClCompile Include="..\Classes\SD_Dialogue.cpp" />
+    <ClCompile Include="..\Classes\SD_dispatcher.cpp" />
+    <ClCompile Include="..\Classes\SD_event.cpp" />
+    <ClCompile Include="..\Classes\SD_GameLayer.cpp" />
+    <ClCompile Include="..\Classes\SD_ItemEntity.cpp" />
+    <ClCompile Include="..\Classes\SD_ItemState.cpp" />
+    <ClCompile Include="..\Classes\SD_LaEmojiPack.cpp" />
+    <ClCompile Include="..\Classes\SD_listenerSet.cpp" />
+    <ClCompile Include="..\Classes\SD_Npc.cpp" />
+    <ClCompile Include="..\Classes\SD_pCtrl.cpp" />
+    <ClCompile Include="..\Classes\M_player.cpp" />
+    <ClCompile Include="..\Classes\DB_player.cpp" />
+    <ClCompile Include="..\Classes\M_amor.cpp" />
+    <ClCompile Include="..\Classes\M_AnimationPack.cpp" />
+    <ClCompile Include="..\Classes\DB_Animate.cpp" />
+    <ClCompile Include="..\Classes\DB_AnimationPack.cpp" />
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\DB_amor.cpp" />
+    <ClCompile Include="..\Classes\DataBase.cpp" />
+    <ClCompile Include="..\Classes\DB_Ctrl.cpp" />
+    <ClCompile Include="..\Classes\M_Dialog.cpp" />
+    <ClCompile Include="..\Classes\SD_Dialog.cpp" />
+    <ClCompile Include="..\Classes\M_Emoji.cpp" />
+    <ClCompile Include="..\Classes\SD_Emoji.cpp" />
+    <ClCompile Include="..\Classes\M_eskill.cpp" />
+    <ClCompile Include="..\Classes\M_esshot.cpp" />
+    <ClCompile Include="..\Classes\M_Enemy.cpp" />
+    <ClCompile Include="..\Classes\DB_ebreed.cpp" />
+    <ClCompile Include="..\Classes\Ctrl_Base.cpp" />
+    <ClCompile Include="..\Classes\Ctrl_AI.cpp" />
+    <ClCompile Include="..\Classes\Ctrl_Simple.cpp" />
+    <ClCompile Include="..\Classes\SD_Scene.cpp" />
+    <ClCompile Include="..\Classes\SD_SplashLayer.cpp" />
+    <ClCompile Include="..\Classes\SD_UI_Item.cpp" />
+    <ClCompile Include="..\Classes\SD_UI_Menu.cpp" />
+    <ClCompile Include="..\Classes\SplashScene.cpp" />
+    <ClCompile Include="..\Classes\Sys_Ctrl.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\SD_LaEmoji.cpp" />
+    <ClCompile Include="..\Classes\Sys_LaEmoji.cpp" />
+    <ClCompile Include="..\Classes\DB_LaEmoji.cpp" />
+    <ClCompile Include="..\Classes\M_PageEmoji.cpp" />
+    <ClCompile Include="..\Classes\DB_phybody.cpp" />
+    <ClCompile Include="..\Classes\PhysicsStringData.cpp" />
+    <ClCompile Include="..\Classes\M_LaEmoji.cpp" />
+    <ClCompile Include="..\Classes\DB_physhape.cpp" />
+    <ClCompile Include="..\Classes\SD_amor.cpp" />
+    <ClCompile Include="..\Classes\SD_ebreed.cpp" />
+    <ClCompile Include="..\Classes\SD_eskill.cpp" />
+    <ClCompile Include="..\Classes\SD_pSkill.cpp" />
+    <ClCompile Include="..\Classes\SD_ubreed.cpp" />
+    <ClCompile Include="..\Classes\SD_wbreed.cpp" />
+    <ClCompile Include="..\Classes\ShapeStringData.cpp" />
+    <ClCompile Include="..\Classes\DB_unit.cpp" />
+    <ClCompile Include="..\Classes\M_weapon.cpp" />
+    <ClCompile Include="..\Classes\DB_weapon.cpp" />
+    <ClCompile Include="..\Classes\DB_pSkill.cpp" />
+    <ClCompile Include="..\Classes\M_eventHandler.cpp" />
+    <ClCompile Include="..\Classes\M_callbackHandler.cpp" />
+    <ClCompile Include="..\Classes\CP_testLog.cpp" />
+    <ClCompile Include="..\Classes\Sys_eventListener.cpp" />
+    <ClCompile Include="..\Classes\Sys_Item.cpp" />
+    <ClCompile Include="..\Classes\M_DropFuncHandler.cpp" />
+    <ClCompile Include="..\Classes\M_DropFuncParser.cpp" />
+    <ClCompile Include="..\Classes\M_ItemState.cpp" />
+    <ClCompile Include="..\Classes\ISDP_Default.cpp" />
+    <ClCompile Include="..\Classes\M_UseFuncHandler.cpp" />
+    <ClCompile Include="..\Classes\M_UseFuncParser.cpp" />
+    <ClCompile Include="..\Classes\ISUP_RestoreHp.cpp" />
+    <ClCompile Include="..\Classes\ISUP_DamageToSelf.cpp" />
+    <ClCompile Include="..\Classes\M_ItemEntity.cpp" />
+    <ClCompile Include="..\Classes\M_FlyingEndFuncParser.cpp" />
+    <ClCompile Include="..\Classes\M_FlyingEndFuncHandler.cpp" />
+    <ClCompile Include="..\Classes\M_FEP_Default.cpp" />
+    <ClCompile Include="..\Classes\Sys_Save%28Basic%29.cpp" />
+    <ClCompile Include="..\Classes\Sys_Scene.cpp" />
+    <ClCompile Include="..\Classes\Sys_UI.cpp" />
+    <ClCompile Include="..\Classes\MQAP_ForceOut.cpp" />
+    <ClCompile Include="..\Classes\MQAP_FadeOut.cpp" />
+    <ClCompile Include="..\Classes\DP_LeftClickOnThis.cpp" />
+    <ClCompile Include="..\Classes\M_ActionHandler.cpp" />
+    <ClCompile Include="..\Classes\MAP_ModeTo.cpp" />
+    <ClCompile Include="..\Classes\M_GameLayerBase.cpp" />
+    <ClCompile Include="..\Classes\Sys_Save%28Scene%29.cpp" />
+    <ClCompile Include="..\Classes\Sys_Save%28Player%29.cpp" />
+    <ClCompile Include="..\Classes\M_Shadow.cpp" />
+    <ClCompile Include="..\Classes\M_MainMenu.cpp" />
+    <ClCompile Include="..\Classes\Test_Layer.cpp" />
+    <ClCompile Include="..\Classes\Test_Scene.cpp" />
+    <ClCompile Include="..\Classes\Ref2TestCase.h" />
+    <ClCompile Include="..\Classes\M_StepHandler.cpp" />
+    <ClCompile Include="..\Classes\M_StepParser.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\Ctrl_MenuRandom.h" />
+    <ClInclude Include="..\Classes\DB_Animation.h" />
+    <ClInclude Include="..\Classes\DB_Dialog.h" />
+    <ClInclude Include="..\Classes\DB_Dialogue.h" />
+    <ClInclude Include="..\Classes\DB_Emoji.h" />
+    <ClInclude Include="..\Classes\DB_GameLayer.h" />
+    <ClInclude Include="..\Classes\DB_LaEmojiPack.h" />
+    <ClInclude Include="..\Classes\DB_Npc.h" />
+    <ClInclude Include="..\Classes\DB_Scene.h" />
+    <ClInclude Include="..\Classes\DB_SplashLayer.h" />
+    <ClInclude Include="..\Classes\DB_UI_Item.h" />
+    <ClInclude Include="..\Classes\DB_UI_Menu.h" />
+    <ClInclude Include="..\Classes\DCCP_DialogueEnd.h" />
+    <ClInclude Include="..\Classes\DCCP_LaCtrlRight.h" />
+    <ClInclude Include="..\Classes\DCCP_LaCtrlLeft.h" />
+    <ClInclude Include="..\Classes\DP_LeftClickOnUIItem.h" />
+    <ClInclude Include="..\Classes\EnumAdvenTri.h" />
+    <ClInclude Include="..\Classes\ISUP_RestoreMp.h" />
+    <ClInclude Include="..\Classes\DB_callback.h" />
+    <ClInclude Include="..\Classes\DB_dispatcher.h" />
+    <ClInclude Include="..\Classes\DB_event.h" />
+    <ClInclude Include="..\Classes\DB_ItemEntity.h" />
+    <ClInclude Include="..\Classes\DB_ItemState.h" />
+    <ClInclude Include="..\Classes\DB_listenerSet.h" />
+    <ClInclude Include="..\Classes\DB_pCtrl.h" />
+    <ClInclude Include="..\Classes\DB_pSkill.h" />
+    <ClInclude Include="..\Classes\ES_Dash.h" />
+    <ClInclude Include="..\Classes\ES_Standred.h" />
+    <ClInclude Include="..\Classes\ISDP_Flying.h" />
+    <ClInclude Include="..\Classes\MAP_Animate.h" />
+    <ClInclude Include="..\Classes\MAP_EntityBlast.h" />
+    <ClInclude Include="..\Classes\MAP_EnvirBlast.h" />
+    <ClInclude Include="..\Classes\MAP_FadeIn.h" />
+    <ClInclude Include="..\Classes\MAP_FadeOut.h" />
+    <ClInclude Include="..\Classes\MAP_MoveTo.h" />
+    <ClInclude Include="..\Classes\MEAP_FadeIn.h" />
+    <ClInclude Include="..\Classes\MEAP_Force.h" />
+    <ClInclude Include="..\Classes\ME_Blur.h" />
+    <ClInclude Include="..\Classes\M_ActionParser.h" />
+    <ClInclude Include="..\Classes\M_Dialogue.h" />
+    <ClInclude Include="..\Classes\M_Effect.h" />
+    <ClInclude Include="..\Classes\M_EffectSprite.h" />
+    <ClInclude Include="..\Classes\M_GameLayerCommon.h" />
+    <ClInclude Include="..\Classes\M_MenuAnimationParser.h" />
+    <ClInclude Include="..\Classes\M_ScriptParser.h" />
+    <ClInclude Include="..\Classes\M_SplashLayer.h" />
+    <ClInclude Include="..\Classes\M_MenuAnimationHandler.h" />
+    <ClInclude Include="..\Classes\M_callbackParser.h" />
+    <ClInclude Include="..\Classes\Ctrl_Camera.h" />
+    <ClInclude Include="..\Classes\M_dispatchHandler.h" />
+    <ClInclude Include="..\Classes\M_dispatchParser.h" />
+    <ClInclude Include="..\Classes\M_EDash.h" />
+    <ClInclude Include="..\Classes\M_EEP_Default.h" />
+    <ClInclude Include="..\Classes\M_EEP_FadeIn.h" />
+    <ClInclude Include="..\Classes\M_EmojiActionHandler.h" />
+    <ClInclude Include="..\Classes\M_EmojiActionParser.h" />
+    <ClInclude Include="..\Classes\M_EnemyState.h" />
+    <ClInclude Include="..\Classes\M_eventParserPhysics.h" />
+    <ClInclude Include="..\Classes\M_LaEmojiPack.h" />
+    <ClInclude Include="..\Classes\M_Npc.h" />
+    <ClInclude Include="..\Classes\Ctrl_Player.h" />
+    <ClInclude Include="..\Classes\DB_player.h" />
+    <ClInclude Include="..\Classes\M_amor.h" />
+    <ClInclude Include="..\Classes\M_AnimationPack.h" />
+    <ClInclude Include="..\Classes\DB_Animate.h" />
+    <ClInclude Include="..\Classes\DB_AnimationPack.h" />
+    <ClInclude Include="..\Classes\Ref2Effect.h" />
+    <ClInclude Include="..\Classes\Ref_TestCase.h" />
+    <ClInclude Include="..\Classes\SD_Animate.h" />
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\DB_amor.h" />
+    <ClInclude Include="..\Classes\DataBase.h" />
+    <ClInclude Include="..\Classes\DB_Ctrl.h" />
+    <ClInclude Include="..\Classes\M_UI_Item.h" />
+    <ClInclude Include="..\Classes\M_UI_Layer.h" />
+    <ClInclude Include="..\Classes\M_UI_Menu.h" />
+    <ClInclude Include="..\Classes\Ref2ActionHandler.h" />
+    <ClInclude Include="..\Classes\Ref2Dialogue.h" />
+    <ClInclude Include="..\Classes\Ref2DropFunc.h" />
+    <ClInclude Include="..\Classes\Ref2FlyEndFunc.h" />
+    <ClInclude Include="..\Classes\Ref2ItemEntity.h" />
+    <ClInclude Include="..\Classes\Ref2ItemState.h" />
+    <ClInclude Include="..\Classes\Ref2SceneSystem.h" />
+    <ClInclude Include="..\Classes\Ref2UseFunc.h" />
+    <ClInclude Include="..\Classes\Ref2MenuAnimationHandler.h" />
+    <ClInclude Include="..\Classes\Ref2Npc.h" />
+    <ClInclude Include="..\Classes\Ref2UI.h" />
+    <ClInclude Include="..\Classes\Ref2UIItem.h" />
+    <ClInclude Include="..\Classes\Ref2UIMenu.h" />
+    <ClInclude Include="..\Classes\Ref_ActionHandler.h" />
+    <ClInclude Include="..\Classes\Ref_Dialogue.h" />
+    <ClInclude Include="..\Classes\Ref_DialogueCtrl.h" />
+    <ClInclude Include="..\Classes\Ref_EmojiAction.h" />
+    <ClInclude Include="..\Classes\Ref_GameLayer.h" />
+    <ClInclude Include="..\Classes\Ref_ItemEntity.h" />
+    <ClInclude Include="..\Classes\Ref_ItemState.h" />
+    <ClInclude Include="..\Classes\Ref_LaEmojiPack.h" />
+    <ClInclude Include="..\Classes\Ref_MenuAnimationHandler.h" />
+    <ClInclude Include="..\Classes\Ref_Npc.h" />
+    <ClInclude Include="..\Classes\Ref_Save.h" />
+    <ClInclude Include="..\Classes\Ref_SceneSystem.h" />
+    <ClInclude Include="..\Classes\Ref_UI.h" />
+    <ClInclude Include="..\Classes\Ref_UIHandler.h" />
+    <ClInclude Include="..\Classes\Ref_UIItem.h" />
+    <ClInclude Include="..\Classes\Ref_UIMenu.h" />
+    <ClInclude Include="..\Classes\SD_Animation.h" />
+    <ClInclude Include="..\Classes\SD_AnimationPack.h" />
+    <ClInclude Include="..\Classes\SD_Dialog.h" />
+    <ClInclude Include="..\Classes\SD_Dialogue.h" />
+    <ClInclude Include="..\Classes\SD_Emoji.h" />
+    <ClInclude Include="..\Classes\M_eskill.h" />
+    <ClInclude Include="..\Classes\M_esshot.h" />
+    <ClInclude Include="..\Classes\M_Enemy.h" />
+    <ClInclude Include="..\Classes\M_player.h" />
+    <ClInclude Include="..\Classes\M_PlayerState.h" />
+    <ClInclude Include="..\Classes\M_pSkill.h" />
+    <ClInclude Include="..\Classes\M_PS_atk.h" />
+    <ClInclude Include="..\Classes\M_PS_dash.h" />
+    <ClInclude Include="..\Classes\M_PS_spk.h" />
+    <ClInclude Include="..\Classes\EPP_playerBodyOnEnemy.h" />
+    <ClInclude Include="..\Classes\PS_Dash.h" />
+    <ClInclude Include="..\Classes\PS_Standred.h" />
+    <ClInclude Include="..\Classes\Ref_Enum.h" />
+    <ClInclude Include="..\Classes\Ref2Animation.h" />
+    <ClInclude Include="..\Classes\Ref2Callback.h" />
+    <ClInclude Include="..\Classes\Ref2Controller.h" />
+    <ClInclude Include="..\Classes\Ref2DataBase.h" />
+    <ClInclude Include="..\Classes\Ref2Ebreed.h" />
+    <ClInclude Include="..\Classes\Ref2Entity.h" />
+    <ClInclude Include="..\Classes\Ref2EventSystem.h" />
+    <ClInclude Include="..\Classes\Ref2LaEmoji.h" />
+    <ClInclude Include="..\Classes\Ref2ListenerSet.h" />
+    <ClInclude Include="..\Classes\Ref2Physics.h" />
+    <ClInclude Include="..\Classes\Ref2EventPhysics.h" />
+    <ClInclude Include="..\Classes\Ref2Player.h" />
+    <ClInclude Include="..\Classes\Ref2Pskill.h" />
+    <ClInclude Include="..\Classes\Ref_Callback.h" />
+    <ClInclude Include="..\Classes\Ref_DataBase.h" />
+    <ClInclude Include="..\Classes\Ref_DHandler.h" />
+    <ClInclude Include="..\Classes\Ref_Ebreed.h" />
+    <ClInclude Include="..\Classes\Ref_Entity.h" />
+    <ClInclude Include="..\Classes\DB_ebreed.h" />
+    <ClInclude Include="..\Classes\Ctrl_Base.h" />
+    <ClInclude Include="..\Classes\Ctrl_AI.h" />
+    <ClInclude Include="..\Classes\Ref_Item.h" />
+    <ClInclude Include="..\Classes\Ref_UseFunc.h" />
+    <ClInclude Include="..\Classes\SD_Ctrl.h" />
+    <ClInclude Include="..\Classes\Ctrl_Simple.h" />
+    <ClInclude Include="..\Classes\SD_GameLayer.h" />
+    <ClInclude Include="..\Classes\SD_ItemEntity.h" />
+    <ClInclude Include="..\Classes\SD_ItemState.h" />
+    <ClInclude Include="..\Classes\SD_LaEmojiPack.h" />
+    <ClInclude Include="..\Classes\SD_Npc.h" />
+    <ClInclude Include="..\Classes\SD_Scene.h" />
+    <ClInclude Include="..\Classes\SD_SplashLayer.h" />
+    <ClInclude Include="..\Classes\SD_UI_Item.h" />
+    <ClInclude Include="..\Classes\SD_UI_Menu.h" />
+    <ClInclude Include="..\Classes\SplashScene.h" />
+    <ClInclude Include="..\Classes\Sys_Ctrl.h" />
+    <ClInclude Include="..\Classes\M_Emoji.h" />
+    <ClInclude Include="..\Classes\M_Dialog.h" />
+    <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\SD_LaEmoji.h" />
+    <ClInclude Include="..\Classes\Sys_LaEmoji.h" />
+    <ClInclude Include="..\Classes\DB_LaEmoji.h" />
+    <ClInclude Include="..\Classes\M_PageEmoji.h" />
+    <ClInclude Include="..\Classes\DB_phybody.h" />
+    <ClInclude Include="..\Classes\PhysicsStringData.h" />
+    <ClInclude Include="..\Classes\M_LaEmoji.h" />
+    <ClInclude Include="..\Classes\DB_physhape.h" />
+    <ClInclude Include="..\Classes\Ref_Animation.h" />
+    <ClInclude Include="..\Classes\Ref_Controller.h" />
+    <ClInclude Include="..\Classes\Ref_Event.h" />
+    <ClInclude Include="..\Classes\Ref_EventSystem.h" />
+    <ClInclude Include="..\Classes\Ref_LaEmoji.h" />
+    <ClInclude Include="..\Classes\Ref_ListenerSet.h" />
+    <ClInclude Include="..\Classes\Ref_Physics.h" />
+    <ClInclude Include="..\Classes\Ref_EventPhysics.h" />
+    <ClInclude Include="..\Classes\Ref_Player.h" />
+    <ClInclude Include="..\Classes\Ref_PlayerState.h" />
+    <ClInclude Include="..\Classes\Ref_Pskill.h" />
+    <ClInclude Include="..\Classes\SD_amor.h" />
+    <ClInclude Include="..\Classes\SD_callback.h" />
+    <ClInclude Include="..\Classes\SD_dispatcher.h" />
+    <ClInclude Include="..\Classes\SD_ebreed.h" />
+    <ClInclude Include="..\Classes\SD_eskill.h" />
+    <ClInclude Include="..\Classes\SD_event.h" />
+    <ClInclude Include="..\Classes\SD_listenerSet.h" />
+    <ClInclude Include="..\Classes\SD_pSkill.h" />
+    <ClInclude Include="..\Classes\SD_ubreed.h" />
+    <ClInclude Include="..\Classes\SD_wbreed.h" />
+    <ClInclude Include="..\Classes\ShapeStringData.h" />
+    <ClInclude Include="..\Classes\Ref_Eskill.h" />
+    <ClInclude Include="..\Classes\StringData.h" />
+    <ClInclude Include="..\Classes\DB_unit.h" />
+    <ClInclude Include="..\Classes\M_weapon.h" />
+    <ClInclude Include="..\Classes\DB_weapon.h" />
+    <ClInclude Include="..\Classes\SD_pCtrl.h" />
+    <ClInclude Include="..\Classes\M_eventHandler.h" />
+    <ClInclude Include="..\Classes\DP_positionWithin.h" />
+    <ClInclude Include="..\Classes\M_callbackHandler.h" />
+    <ClInclude Include="..\Classes\CP_testLog.h" />
+    <ClInclude Include="..\Classes\Ref_CbHandler.h" />
+    <ClInclude Include="..\Classes\Ref_EHandler.h" />
+    <ClInclude Include="..\Classes\Ref2Event.h" />
+    <ClInclude Include="..\Classes\Ref2Dispatcher.h" />
+    <ClInclude Include="..\Classes\Ref_Dispatcher.h" />
+    <ClInclude Include="..\Classes\Sys_eventListener.h" />
+    <ClInclude Include="..\Classes\M_eventHandlerPhysics.h" />
+    <ClInclude Include="..\Classes\Ref2Enemy.h" />
+    <ClInclude Include="..\Classes\Ref_Enemy.h" />
+    <ClInclude Include="..\Classes\Sys_Item.h" />
+    <ClInclude Include="..\Classes\M_DropFuncParser.h" />
+    <ClInclude Include="..\Classes\M_DropFuncHandler.h" />
+    <ClInclude Include="..\Classes\Ref_DropFunc.h" />
+    <ClInclude Include="..\Classes\M_ItemState.h" />
+    <ClInclude Include="..\Classes\ISDP_Default.h" />
+    <ClInclude Include="..\Classes\ISUP_RestoreHp.h" />
+    <ClInclude Include="..\Classes\M_UseFuncParser.h" />
+    <ClInclude Include="..\Classes\M_UseFuncHandler.h" />
+    <ClInclude Include="..\Classes\ISUP_DamageToSelf.h" />
+    <ClInclude Include="..\Classes\M_ItemEntity.h" />
+    <ClInclude Include="..\Classes\M_FlyingEndFuncParser.h" />
+    <ClInclude Include="..\Classes\M_FlyingEndFuncHandler.h" />
+    <ClInclude Include="..\Classes\Ref_FlyFunc.h" />
+    <ClInclude Include="..\Classes\M_FEP_Blast.h" />
+    <ClInclude Include="..\Classes\M_FEP_Default.h" />
+    <ClInclude Include="..\Classes\Sys_Save.h" />
+    <ClInclude Include="..\Classes\Sys_Scene.h" />
+    <ClInclude Include="..\Classes\Sys_UI.h" />
+    <ClInclude Include="..\Classes\MQAP_ForceOut.h" />
+    <ClInclude Include="..\Classes\MQAP_FadeOut.h" />
+    <ClInclude Include="..\Classes\Ref2ItemSystem.h" />
+    <ClInclude Include="..\Classes\DP_LeftClickOnThis.h" />
+    <ClInclude Include="..\Classes\M_ActionHandler.h" />
+    <ClInclude Include="..\Classes\M_GameLayerBase.h" />
+    <ClInclude Include="..\Classes\Ref_SplashLayer.h" />
+    <ClInclude Include="..\Classes\M_Shadow.h" />
+    <ClInclude Include="..\Classes\M_MainMenu.h" />
+    <ClInclude Include="..\Classes\Ref_GameMenu.h" />
+    <ClInclude Include="..\Classes\Test_Layer.h" />
+    <ClInclude Include="..\Classes\Test_Scene.h" />
+    <ClInclude Include="..\Classes\M_StepHandler.h" />
+    <ClInclude Include="..\Classes\Ref_StepCtrl.h" />
+    <ClInclude Include="..\Classes\M_StepParser.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="Ref_EnemyState.h" />
+    <ClInclude Include="Ref2EnemyState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\cocos2d\cocos\editor-support\spine\proj.win32\libSpine.vcxproj">
+      <Project>{b7c2a162-dec9-4418-972e-240ab3cbfcae}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cocos2d\external\Box2D\proj.win32\libbox2d.vcxproj">
+      <Project>{929480e7-23c0-4df6-8456-096d71547116}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

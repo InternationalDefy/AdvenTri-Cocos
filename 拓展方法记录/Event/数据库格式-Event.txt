@@ -1,0 +1,42 @@
+数据库格式
+Table_Event.csv
+
+格式综述：
+Line 1 n，总数据元的数目。
+Line 2 起，共 n 个数据元。
+
+数据元格式：
+Line 1 string数据元名称&&事件名称，string变量类型的名称，stirng该变量的字面值。
+
+数据库格式：
+Table_Callback.csv
+
+格式综述：
+Line 1 n，总数据元的数目。
+Line 2 起，共 n 个数据元。
+
+数据元格式：
+Line 1 string数据元名称，string接受事件名称，int回调函数优先级，bool是否吞噬事件，float冷却时间，int限制次数，string回调函数类型，int n 变量数目，string[n]变量。
+
+注释：
+派生类变量类型和数目
+CC_log：1，string要输出的string
+DiaCtrl_End：0（无变量）
+LaCtrl_Left：0
+LaCtrl_Right：0
+
+
+数据库格式：
+Table_Dispatcher.csv
+
+格式综述：
+Line 1 n，总数据元的数目。
+Line 2 起，共 n 个数据元。
+
+数据元格式：
+Line 1 string数据元名称，string派发事件名称，float冷却时间，int限制次数，string监听函数类型，int n 变量数目，string[n]变量。
+
+注释：
+派生类变量类型和数目
+LeftClickOnUIItem，1，this （固定值）
+PositionWithin，4，posx，posy，width，height（创建舰艇区域Rect(x,y,w,h)）

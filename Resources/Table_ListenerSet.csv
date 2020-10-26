@@ -1,0 +1,11 @@
+8,//
+name,numberOfDispatcher,dispatcher(s),numberOfListener,listeners,
+Test_DiaCtrlListenerSet_1,1,Test_UI_MouseAt_DiaCtrl,1,Test_DiaCtrl_Callback,
+LaCtrlListenerSet_Left,1,Test_UI_MouseAt_LaCtrlLeft,1,Test_LaCtrlLeft_Callback,
+LaCtrlListenerSet_Right,1,Test_UI_MouseAt_LaCtrlRight,1,Test_LaCtrlRight_Callback,
+Test_Set1,1,Test_Dispatcher1,1,Test_Callback1,
+Test_Set2,1,Test_Dispatcher1,2,Test_Callback2,Test_Callback1,
+Test_UI_Item_ListenerSet_1,1,Test_UI_MouseAt_1,1,Test_UI_Callback,
+Set_None,0,0,
+TestEnemyListenerSet,0,0,
+

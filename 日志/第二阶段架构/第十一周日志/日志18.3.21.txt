@@ -1,0 +1,41 @@
+今日参照19日的设计开始实现物品逻辑类和实体类的模型的实现，先构建一个可以使用的Sys管理类和一个可以用来调度的Handler，Parser。
+使用类似于EventSys的处理方法。
+
+思考Sys应该具有的方法和需要实现的操作。
+依据定义里的繁复数据创建除M_ItemEntity和M_ItemState的方法，DropCallFuncHandler?UseCallFuncHandler?FlyingEndCallFuncHandler?访问谁？谁持有？
+
+M_ItemEntity,M_ItemState持有一个Action* _callfunc 在创建以及初始化时由Handler创建，Handler也通过调用不同数目的Parser，把CallFuncBind到一个Action*上
+Handler由Sys持有，Parser由Handler持有，不是静态类或静态方法，动态但是类似于？单例？
+需要设计三个Enum表示其类型。
+设计了三个Enum以及string的转化函数，可以在Enum中拓展。
+下面要实现一个Handler和Parser的双类体系，先从DropCallFunc开始
+从Callbacker的体系里尝试改制，但是它们的运行方式是不同的，一个作为子节点添加而存在因为实现的目的比较复杂，而另一个则是添加函数而存在。
+重新考虑DropFuncParser应当拥有的虚方法。
+本质上是单例？那需要提供一个创建方法而初始化？Nope？需要有一个添加方法倒是。
+架构更改并初步搭建，问题如下：
+1：目前尚未创建合理的M_ItemState类所以添加操作不甚确切。2：尚未有拓展体系的出现。
+
+*****************
+以上为20日日志
+*****************
+开始构建M_ItemState类并提供一个Handler和Parser对其内容的添加方法。
+设计：思考M_ItemState应该具有哪些属性和方法。
+public: node M_Player* parentNode
+继承自Node类，需要有一个M_Player* parentNode
+UI set有ui实现方法本身的实例或者是使用时调用的参数
+std::string ItemName entityName
+Sys_Item* sys
+Action* useFunc DropFunc
+Animate* PickiUpAnimate Animate* UsingAnimate*
+float usingTime
+
+初步尝试了M_ItemState的搭建，没有实现具体的StringData创建功能。
+添加属性PickUpAnimate，在SD和DB中先予以修改。
+完善了ItemState的一些内部操作，开始尝试利用其构建M_ItemState
+深入修改DropFuncParser体系，以后的注册方法可以通过ISDP_Default的定义来进行。
+实现DropFunc的深入调用。
+
+利用类似的方式加入UseFuncParser注意UseFuncParser是一个组合函数。
+组合函数加入成功，但是需要考虑一个问题，就是对父节点的访问函数当前一定程度的需要实现。
+
+给ItemState添加了调用父节点的方法，但是没有完成物品栏的配置，初步实现State类，Entity类是一种实体应当采用实体共通的方法，明天实现。

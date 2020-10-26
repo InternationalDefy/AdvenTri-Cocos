@@ -1,0 +1,62 @@
+2,注意！这个SD的结尾需要两个'\n'
+Line 1:		Name,
+Line 2:		ListenerSetName
+Line 3:		GameLayerTag
+(以下的Npc，Enemy数据定义中无实体的EnterAction，EnterAction由该场景的ListenerSet发放信息，由各自实体类的ListenerSet完成监听而实现入场调用)
+NumberOfBackground(n1),
+Line 4Xn1 1:	NumberOfScript(m),1->m,Script
+Line 4Xn1 2:	BackGroundImageNmae,Vec3 BackGroundPosition3D,BackGroundLocalZOrder,
+Line 4Xn1 3:	EnableAction,ActionType,NumberOfParam(m),1->m,param,
+Line 4Xn1 4:	EnableListenerSet,ListenerSetName,
+EntityTag不同于 EntityName。Name是在数据库中找寻其他元素所使用的，而Tag则是（！每个场景中）单个实体的标识。
+NumberOfNpc(n2),
+Line 2Xn2 1:	NumberOfScript(m),1->m,Script
+Line 2Xn2 2:	EntityTag,NpcName,Vec3 NPCPosition,localZOrder,
+NumberOfEnemy(n3),
+Line 2Xn3 1:	NumberOfScript(m),1->m,Script
+Line 2Xn3 2:	EntityTag,EnemyName,Vec3 NPCPosition,localZOrder,
+NumberOfBorder(n4)
+Line 1Xn4 1:	Vec2 Position,width,height,
+
+Test_GameLayer_1,
+Test_LayerListenerSet_1,
+Tag_Test_GameLayer_1,
+总背景数
+1,
+3,INT,1,RET_BOOL,
+d1.jpg,640,360,-311,1,
+0,
+0,
+总Npc数
+0,
+总敌人数
+0,
+总边界点数
+0,
+
+Test_GameLayer_2,
+Test_LayerListenerSet_2,
+Tag_Test_GameLayer_2,
+总背景数
+1,
+3,INT,1,RET_BOOL,
+d2.jpg,640,360,-311,1,
+1,Animate,1,Test_BG_Animate_1,
+1,Test_BG_ListenerSet_1,
+总Npc数
+1,
+3,INT,1,RET_BOOL,
+Ntity_1,Test_Npc_1,640,320,0,10,
+总敌人数
+2,
+3,INT,1,RET_BOOL,
+Etity_1,Test_Enemy_1,640,390,0,10,
+3,INT,0,RET_BOOL,
+Etity_2,Test_Enemy_1,640,290,0,10,
+总边界点数
+4,
+1330,360,100,720,
+-50,360,100,720,
+0,770,1280,100,
+0,-50,1280,100,
+

@@ -1,0 +1,14 @@
+2,
+Line 1:		name,callActived(ÊÇ·ñÁ¢¼´¼¤»î),zOrder,numberOfItems(n)
+Line 2:		enterAnimationType,enterAnimationParams(m),1->m Params[j]
+Line 3:		quitAnimationType,QuieAnimationNumParams(m),1->m Params[j]
+Line 4->n+3:	ItemName[i],activeEnterAnimate[i](bool),posx,posy,Opecity,
+Test_Menu_1,1,99,2,
+FadeIn,1,2,
+FadeOut,1,10,
+Test_UIItem_1,1,500,200,128,
+Test_UIItem_2,0,-100,-300,220,
+Test_Menu_2,0,100,1,
+FadeIn,1,1,
+ForceOut,0,
+Test_UIItem_2,0,200,500,255,

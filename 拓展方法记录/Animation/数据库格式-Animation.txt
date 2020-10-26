@@ -1,0 +1,7 @@
+这里重点记录派生类格式的数据：
+int m 参数数目，string[m]参数内容。
+MAP_Animate	1，逐帧动画名
+MAP_EntityBlast	3，img名字，持续时间，爆炸数目
+MAP_EnvirBlast	3，img名字，持续时间，爆炸数目
+MAP_FadeIn	1，时间
+MAP_MoveTo	3，时间，X位置，Y位置

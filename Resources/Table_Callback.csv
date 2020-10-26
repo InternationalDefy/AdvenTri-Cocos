@@ -1,0 +1,8 @@
+6,
+Name,ReciviedEventName,FixedProximity,Swallow,CoolDownTime,LimitTimes,CallbackFuncType,C_FuncNumberOfParams,Param(s),
+Test_DiaCtrl_Callback,Test_MouseOnDiaCtrl,10,1,1,-1,DiaCtrl_End,0,
+Test_LaCtrlLeft_Callback,Test_MouseOnLaCtrlLeft,10,1,1,-1,LaCtrl_Left,0,
+Test_LaCtrlRight_Callback,Test_MouseOnLaCtrlRight,10,1,1,-1,LaCtrl_Right,0,
+Test_Callback1,Test_Event1,-1,0,0.5,10,CC_log,1,Hey here1!,
+Test_Callback2,Test_Event1,1,0,10,2,CC_log,1,Hey here2!,
+Test_UI_Callback,Test_MouseOnUI_1,10,1,1,-1,CC_log,1,OnClick!,

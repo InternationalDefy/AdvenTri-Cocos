@@ -1,0 +1,14 @@
+EffectSprite 该类时Sprite的派生类，为Sprite添加了和Effect关联的方法，是Entity类的直接父类。
+
+EffectBase Effect类的基类，提供了一个initGLProgram的虚函数和与实体关联的方法。
+
+派生类记录：
+ME_Blur 实现阴影模糊。
+
+实现机制：
+
+Effect类通过name来找到.fsh文件创建 GLProgramState* 实例实现渲染，Sprite在SetEffect的时候实际上是setGLProgramState。GLProgramState是由GL程序.fsh文件定义的。
+
+内存管理&&生命周期：
+
+即时创建与使用，与父节点同生命周期。在替换时会被删除。

@@ -1,0 +1,10 @@
+Debuff Type
+统一使用过去分词 燃烧 Burn 冰冻 Frozen 硬直 Parryed 中毒 Poisoned 诅咒 Cursed 触电 Shocked 流血 Bled
+Damage Type
+统一使用名词或动词 
+通常 Common 斩击 Blade 刺击 Stab 钝击 Blunt 火 Fire 冰 Frost 光 Light 暗 Dark 魔 Magic 毒 Poison 
+燃烧 Burn 冰冻 Frozen 中毒 Poisoned 出血 Bleed 触电 Shock 诅咒 Curse
+Kill String Type
+统一使用被动形式或形容词
+通常 Common 斩击 Bled 刺击 Bled 钝击 Common 火 Burn 冰 Frozen 光 Shocked 暗 Cursed 魔 Magic 毒 Poisoned 
+燃烧 Burn 冰冻 Frozen 中毒 Poisoned 出血 Bled 触电 Shocked 诅咒 Cursed

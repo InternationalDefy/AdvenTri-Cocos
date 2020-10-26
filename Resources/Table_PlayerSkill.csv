@@ -1,0 +1,9 @@
+6,//总行数
+name,positionname,coolDownTime(f),typename,numberofparams(i),param[1->i],
+attack_lv1,SimpleAttack,1,atk,0,
+attack_lv2,SimpleAttack,0.9,atk,0,
+speak1,Skill1,0,spk,1,1,只有一个变量，是所使用LaEmoji的id（可能还需要改因为laemoji可能使用string）
+speak2,Skill2,0,spk,1,2,只有一个变量，是所使用LaEmoji的id，注意：positionName是其所使用技能槽位的name
+dash_simple_lv1,Dash,0,dash,1,10000,
+dash_attack_lv1,DashAttack,1,atk,0,
+

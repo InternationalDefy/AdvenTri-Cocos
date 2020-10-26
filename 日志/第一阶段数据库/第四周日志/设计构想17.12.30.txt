@@ -1,0 +1,12 @@
+技能系统（敌人）的构建：
+
+敌人的技能要有一个基类E_Skill
+其余技能由其派生，而其支持
+virtual void active()（执行技能）
+virtual void create(S_Breed* s_breed) （不同的创建方法）
+static parseType()
+?private void parseType(int) 
+Enemy* _owner属性
+addEnemy(Enemy* enemy)（所有派生类均需使用的共有方法）
+
+主角的Skill也可以用类似的方法处理

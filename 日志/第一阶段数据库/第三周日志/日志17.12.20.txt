@@ -1,0 +1,12 @@
+create函数加上了对entity添加的动作，不过并没有完全实现
+以ControllerSimple为例开始构建Controller类
+遗留问题
+1.应当是从Entity到Controller的添加动作
+2.更新尚未实现
+3.尚未实现
+4.类型转换还需考虑（可能需要再一个EntitySystem）
+
+承接上回，
+3.更新现已实现
+4.类型转换甚至更加混乱了。。。Action也ran了进去，
+待改处很多，先吃晚饭

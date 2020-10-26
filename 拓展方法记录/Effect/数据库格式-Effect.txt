@@ -1,0 +1,4 @@
+Effect没有数据库，这里记录 .fsh shaders文件的功能。
+
+shadow_blur.fsh
+模糊阴影效果。

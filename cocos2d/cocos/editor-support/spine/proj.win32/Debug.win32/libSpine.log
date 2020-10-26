@@ -1,0 +1,39 @@
+﻿生成启动时间为 2018/12/24 16:40:05。
+     1>项目“F:\CocosProjects\AdvenTri\cocos2d\cocos\editor-support\spine\proj.win32\libSpine.vcxproj”在节点 3 上(Build 个目标)。
+     1>Lib:
+         F:\Visual Studio 2013\VC\bin\Lib.exe /OUT:"F:\CocosProjects\AdvenTri\proj.win32\Debug.win32\libSpine.lib" /NOLOGO Debug.win32\Animation.obj
+         Debug.win32\AnimationState.obj
+         Debug.win32\AnimationStateData.obj
+         Debug.win32\Atlas.obj
+         Debug.win32\AtlasAttachmentLoader.obj
+         Debug.win32\Attachment.obj
+         Debug.win32\AttachmentLoader.obj
+         Debug.win32\Bone.obj
+         Debug.win32\BoneData.obj
+         Debug.win32\BoundingBoxAttachment.obj
+         Debug.win32\Event.obj
+         Debug.win32\EventData.obj
+         Debug.win32\extension.obj
+         Debug.win32\IkConstraint.obj
+         Debug.win32\IkConstraintData.obj
+         Debug.win32\Json.obj
+         Debug.win32\MeshAttachment.obj
+         Debug.win32\PolygonBatch.obj
+         Debug.win32\RegionAttachment.obj
+         Debug.win32\Skeleton.obj
+         Debug.win32\SkeletonAnimation.obj
+         Debug.win32\SkeletonBounds.obj
+         Debug.win32\SkeletonData.obj
+         Debug.win32\SkeletonJson.obj
+         Debug.win32\SkeletonRenderer.obj
+         Debug.win32\Skin.obj
+         Debug.win32\SkinnedMeshAttachment.obj
+         Debug.win32\Slot.obj
+         Debug.win32\SlotData.obj
+         "Debug.win32\spine-cocos2dx.obj"
+         libSpine.vcxproj -> F:\CocosProjects\AdvenTri\proj.win32\Debug.win32\libSpine.lib
+     1>已完成生成项目“F:\CocosProjects\AdvenTri\cocos2d\cocos\editor-support\spine\proj.win32\libSpine.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:06.85

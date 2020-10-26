@@ -1,0 +1,4 @@
+2,//×ÜÐÐÊý
+Name,TextureName,ItemState,PhysicsBody,dropDelay,timeExist,dropController,throwAnimation,flyingController,FlyingEndCallfuncName,int Numparams,1->p params,
+Test_Item_Entity_1,1.png,Test_Item_State_1,,1,5,,,,Default,0,
+Test_Item_Entity_2,Test_Item_Texture_2,Test_Item_State_2,_Test_Item_PB_2,2,10,Test_Item_Drop_2,Test_Item_Throw_2,Test_Item_Controller_2,Blast,2,Fire,1500,

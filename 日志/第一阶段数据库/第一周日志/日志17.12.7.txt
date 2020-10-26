@@ -1,0 +1,11 @@
+将DATA1写成一个类，继承自Ref（内存管理单元）
+楼上是个糟糕的点子，让我们忘记它
+
+考虑到XML不方便编辑，准备弃之使用CSV
+
+加入CSV类，其负责文件操作，将耦合集中在一处
+
+ error LNK2019: 无法解析的外部符号 "public: static class LanguageData * __cdecl LanguageData::create(void)" (?create@LanguageData@@SAPAV1@XZ)，该符号在函数 "public: virtual bool __thiscall HelloWorld::init(void)" (?init@HelloWorld@@UAE_NXZ) 中被引用
+是因为实现中未加入命名空间
+
+尝试了一天才发现没有好好地跟随原先计划的编程方向，ProcessOn上对EmojiList类修改。

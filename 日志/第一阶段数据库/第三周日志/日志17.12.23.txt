@@ -1,0 +1,22 @@
+Entity预添加Entity* _enemy以实现行为函数，或者多一些static private函数进行调用
+Entiy预使用类型对象模式，那就要添加更多的参数表，明天的Entity数据类型就要多加注意了。
+ControllerSimple仅仅是测试类或者简单类，以后还要加以扩展，但目前而言，其拓展和维护已经实现。
+
+ControllerPlayer应当和拥有PlayerBreed的Entity相互关联，从此处实现主角操作。
+
+当前目标：先实现实体的物理系统！
+
+Breed和Entity的关系：Breed持有Entity的特化数据，而实体持有共性的操作和方法。Breed和数据中枢沟通，是数据层面的定义，用于建立实体。
+共性的方法如Speak，Physics等由Entity持有方法，Breed持有特化数据
+特性的方法如Skill，Attack等由Entity持有特化方法的引用，Breed持有特化方法（？不清楚不同实体的特化方法特化程度如何）
+现在需要一种折中的同时不失去拓展性的设计。
+
+解决办法：把Attack，Skill等类分为各种继承类，Breed在其数据中持有对应继承类的创建参数，以及种类。
+
+Physicsyi应当是Breed层面的数据，在目前实现时先直接对Entity进行操作。
+
+决定！Breed是一个组合类，包含Physics，Attack，Skill，Speak等数据。
+
+先从作为组件类之一的Physics写起。
+
+实现了Shape的数据读入，预使用shapeData创建Shape（还未画进UML）
